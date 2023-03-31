@@ -43,11 +43,19 @@ td + td {
   display: inline-block;
   width: 100px;
 }
+.id_number{
+  
+    .select{
+      
+      select{
+        width: 40px;
+      }
+    }
+  
+}
 .table_wrap_header_item{
   display: flex;
-  flex-direction: column;
-  
-  
+  flex-direction: column;   
 }
 
 .select {
@@ -74,5 +82,6 @@ select {
   -moz-appearance: none;
   appearance: none;
   border: 0;
+  border-bottom: 1px solid black;
   background-color: inherit;
 }

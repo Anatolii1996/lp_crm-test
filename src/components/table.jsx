@@ -85,7 +85,7 @@ const Table = () => {
                 </select>
               </div>
             </td>
-            <td>
+            <td className="id_number">
               <p>ID</p>{" "}
               <div className="select">
                 <select>
@@ -95,7 +95,7 @@ const Table = () => {
                 </select>
               </div>
             </td>
-            <td className="table_wrap_header_item">
+            <td >
               <p>Название</p>
               <div className="select">
                 <select>
@@ -115,7 +115,7 @@ const Table = () => {
                   <img src="./Untitled.png" />
                 </td>
                 <td>XXXX-</td>
-                <td>{el.id}</td>
+                <td className="id_number">{el.id}</td>
                 <td className="order_name">{el.name}</td>
               </tr>
             );
