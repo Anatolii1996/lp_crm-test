@@ -77,7 +77,7 @@ td + td {
   box-sizing: border-box;
 }
 select {
-  padding-right: 25px;
+  // padding-right: 25px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -88,4 +88,35 @@ select {
 .space{
   height: 14px;
   border-bottom: 1px solid black;
+}
+.status{
+.select{
+  select{
+    width: 46px
+  }
+}
+};
+.product{
+  .select{
+    select{
+      width: 41px
+    }
+  }
+};
+.id_number{
+  .select{
+    select{
+      width: 21px
+    }
+  }
+};
+.product_name{
+  .select{
+    select{
+      width: 85px
+    }
+  }
+}
+.space{
+  height: 14px;
 }

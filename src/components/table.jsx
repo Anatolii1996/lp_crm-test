@@ -65,7 +65,7 @@ const Table = () => {
       <table>
         <thead>
           <tr className="table_wrap_header">
-            <td>
+            <td className="status">
               <p>Статус</p>{" "}
               {isHover ? (
                 <div className="select">
@@ -79,7 +79,7 @@ const Table = () => {
                 <div className="space"></div>
               )}
             </td>
-            <td>
+            <td className="product">
               <p>Товар</p>{" "}
               {isHover ? (
                 <div className="select">
@@ -107,7 +107,7 @@ const Table = () => {
                 <div className="space"></div>
               )}
             </td>
-            <td>
+            <td className="product_name">
               <p>Название</p>
               {isHover ? (
                 <div className="select">
