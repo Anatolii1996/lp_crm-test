@@ -64,7 +64,8 @@ td + td {
 }
 .select:after {
   content: "▼";
-  padding: 0 8px;
+  // padding: 0 8px;
+  padding-left: calc(100% - 8px);
   font-size: 12px;
   position: absolute;
   right: 12px;
@@ -91,6 +92,8 @@ select {
 }
 .status{
 .select{
+  position: relative;
+  display: inline-block;
   select{
     width: 46px
   }
@@ -118,5 +121,5 @@ select {
   }
 }
 .space{
-  height: 14px;
+  height: 17px;
 }
