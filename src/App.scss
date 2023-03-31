@@ -1,14 +1,45 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.App{
+body {
+  font-family: "Raleway", sans-serif;
+}
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
-  .table_wrap{
-    width: 40%;
-    
+  .table_wrap {
+    table {
+      width: 40%;
+      thead {
+        width: 100%;
+        tr {
+          td {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            font-size: 14px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
   }
+}
+td + td {
+  padding-left: 15px;
+  // border: 1px solid black;
+}
+.order_name{
+  display: inline-block;
+  width: 100px;
 }
