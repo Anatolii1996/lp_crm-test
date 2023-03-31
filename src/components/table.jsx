@@ -67,43 +67,59 @@ const Table = () => {
           <tr className="table_wrap_header">
             <td>
               <p>Статус</p>{" "}
-              <div className="select">
-                <select>
-                  <option selected></option>
-                  <option>синий</option>
-                  <option>красный</option>
-                </select>
-              </div>
+              {isHover ? (
+                <div className="select">
+                  <select>
+                    <option selected></option>
+                    <option>синий</option>
+                    <option>красный</option>
+                  </select>
+                </div>
+              ) : (
+                <div className="space"></div>
+              )}
             </td>
             <td>
               <p>Товар</p>{" "}
-              <div className="select">
-                <select>
-                  <option selected></option>
-                  <option>синий</option>
-                  <option>красный</option>
-                </select>
-              </div>
+              {isHover ? (
+                <div className="select">
+                  <select>
+                    <option selected></option>
+                    <option>синий</option>
+                    <option>красный</option>
+                  </select>
+                </div>
+              ) : (
+                <div className="space"></div>
+              )}
             </td>
             <td className="id_number">
               <p>ID</p>{" "}
-              <div className="select">
-                <select>
-                  <option selected></option>
-                  <option>синий</option>
-                  <option>красный</option>
-                </select>
-              </div>
+              {isHover ? (
+                <div className="select">
+                  <select>
+                    <option selected></option>
+                    <option>синий</option>
+                    <option>красный</option>
+                  </select>
+                </div>
+              ) : (
+                <div className="space"></div>
+              )}
             </td>
-            <td >
+            <td>
               <p>Название</p>
-              <div className="select">
-                <select>
-                  <option selected></option>
-                  <option>синий</option>
-                  <option>красный</option>
-                </select>
-              </div>
+              {isHover ? (
+                <div className="select">
+                  <select>
+                    <option selected></option>
+                    <option>синий</option>
+                    <option>красный</option>
+                  </select>
+                </div>
+              ) : (
+                <div className="space"></div>
+              )}
             </td>
           </tr>
         </thead>
