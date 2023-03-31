@@ -55,18 +55,56 @@ const Table = () => {
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <div className="table_wrap" onMouseOver={()=>{
-        setIsHover(true)
-      }} onMouseLeave={()=>[
-        setIsHover(false)
-      ]}>
+    <div
+      className="table_wrap"
+      onMouseOver={() => {
+        setIsHover(true);
+      }}
+      onMouseOut={() => [setIsHover(false)]}
+    >
       <table>
         <thead>
           <tr className="table_wrap_header">
-            <td>Статус</td>
-            <td>Товар</td>
-            <td>ID</td>
-            <td>Название</td>
+            <td>
+              <p>Статус</p>{" "}
+              <div className="select">
+                <select>
+                  <option selected></option>
+                  <option>синий</option>
+                  <option>красный</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <p>Товар</p>{" "}
+              <div className="select">
+                <select>
+                  <option selected></option>
+                  <option>синий</option>
+                  <option>красный</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <p>ID</p>{" "}
+              <div className="select">
+                <select>
+                  <option selected></option>
+                  <option>синий</option>
+                  <option>красный</option>
+                </select>
+              </div>
+            </td>
+            <td className="table_wrap_header_item">
+              <p>Название</p>
+              <div className="select">
+                <select>
+                  <option selected></option>
+                  <option>синий</option>
+                  <option>красный</option>
+                </select>
+              </div>
+            </td>
           </tr>
         </thead>
         <tbody>
