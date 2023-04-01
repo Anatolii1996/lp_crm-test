@@ -50,7 +50,8 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
             setRowDisabled(!rowDisabled)
         }}
       >
-        <img src="./Untitled.png" />
+        
+        <img src={rowDisabled?"./Frame 88.png":"./Untitled.png" }/>
       </td>
       <td
         className={`${
