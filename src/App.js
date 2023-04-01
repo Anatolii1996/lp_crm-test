@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div className="App" >
-      <Table setAnySelectRow={setAnySelectRow} ordersArr={ordersArr} />
+      <Table setAnySelectRow={setAnySelectRow} ordersArr={ordersArr} setOrdersArr={setOrdersArr}/>
       <Buttons anySelectRow={anySelectRow} addNewOrder={addNewOrder}/>
     </div>
   );

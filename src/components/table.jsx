@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
 
-const Table = ({ setAnySelectRow, ordersArr }) => {
+const Table = ({ setAnySelectRow, ordersArr, setOrdersArr }) => {
 
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
@@ -91,6 +91,8 @@ if(countSelectRow>0){
                 isHover={isHover}
                 countSelectRow={countSelectRow}
                 setCountSelectRow={setCountSelectRow}
+                setOrdersArr={setOrdersArr}
+                ordersArr={ordersArr}
               />
             );
           })}

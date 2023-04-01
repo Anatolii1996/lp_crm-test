@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
+const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow, setOrdersArr, ordersArr }) => {
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -8,9 +8,12 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
   const [inputValue, setInputValue] = useState(name);
   const [rowDisabled, setRowDisabled] = useState(false);
 
-  useEffect(()=>{
-    setIsNameClicked(false)
-  }, [rowDisabled])
+  const [idVal, setIdVal] = useState("");
+  const [nameVal, setNameVal] = useState("");
+
+  useEffect(() => {
+    setIsNameClicked(false);
+  }, [rowDisabled]);
 
   useEffect(() => {
     if (isRowSelect) {
@@ -82,7 +85,23 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
             : "hover"
         }`}
       >
-        {id}
+        {id ? (
+          id
+        ) : (
+          <input
+            className="input_id"
+            type="text"
+            autoFocus
+            maxLength={3}
+            tabIndex={1}
+            onKeyDown={(e) => {
+              if (e.keyCode == 13) {
+                document.querySelector("#input_name").focus();
+              }
+            }}
+            onChange={(e)=>{setIdVal(e.target.value)}}
+          />
+        )}
       </td>
       <td
         className={`${
@@ -98,9 +117,26 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
           setIsNameClicked(true);
         }}
       >
-        {
-        rowDisabled?name:
-        isNameClicked ? (
+        {!name ? (
+          <input
+            id="input_name"
+            className="input_name"
+            type="text"
+            tabIndex={2}
+
+            onChange={(e)=>{
+                setNameVal(e.target.value)
+            }}
+
+            onKeyDown={(e) => {
+              if (e.keyCode === 13) {
+                setOrdersArr([{id:idVal, name:nameVal},...ordersArr])
+              }
+            }}
+          />
+        ) : rowDisabled ? (
+          name
+        ) : isNameClicked ? (
           <input
             autoFocus
             className="input_name"
