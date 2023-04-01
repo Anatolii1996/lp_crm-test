@@ -67,6 +67,10 @@ const Row = ({
       }}
       onClick={() => {
         setIsRowSelect(!isRowSelect);
+        if(imgMenuOpen){
+             setImgMenuOpen(false);
+        }
+       
       }}
     >
       <td>
