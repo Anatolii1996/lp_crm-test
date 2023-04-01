@@ -1,8 +1,9 @@
-const Buttons = () => {
-  return <div className="buttons_wrap">
-     <span >➕</span>
-   
-    <span className="button_item">✖️</span>
-  </div>;
+const Buttons = ({ anySelectRow }) => {
+  return (
+    <div className="buttons_wrap">
+      <span>➕</span>
+      {anySelectRow && <span>✖️</span>}
+    </div>
+  );
 };
 export default Buttons;

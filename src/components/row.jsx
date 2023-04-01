@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Row = ({ id, name, isHover }) => {
+const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow}) => {
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
+useEffect(()=>{
+if(isRowSelect){
+    setCountSelectRow(countSelectRow+1);
+}else{
+    setCountSelectRow(countSelectRow-1);
+}
+}, [isRowSelect])
+ 
 
   return (
     <tr
@@ -27,7 +35,7 @@ const Row = ({ id, name, isHover }) => {
       <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>XXXX-</td>
       <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>{id}</td>
       <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>{name}</td>
-      {isHover && <td className="delete">
+      {isHover && <td className="delete" title="Удалить строку">
         ✖️
       </td> }
     </tr>

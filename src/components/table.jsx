@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Row from "./row";
 
-const Table = () => {
+const Table = ({ setAnySelectRow }) => {
   const orders = [
     {
       id: 1,
@@ -54,14 +54,25 @@ const Table = () => {
   ];
 
   const [isHover, setIsHover] = useState(false);
+  const [countSelectRow, setCountSelectRow] = useState(1);
+
+  useEffect(()=>{
+if(countSelectRow>0){
+  setAnySelectRow(true)
+}else{
+  setAnySelectRow(false)
+}
+  }, [countSelectRow])
 
   return (
     <div
-      className={`table_wrap ${isHover?"":"table_offset"}`}
+      className={`table_wrap ${isHover ? "" : "table_offset"}`}
       onMouseOver={() => {
         setIsHover(true);
       }}
-      onMouseOut={() => {setIsHover(false)}}
+      onMouseOut={() => {
+        setIsHover(false);
+      }}
     >
       <table>
         <thead>
@@ -73,7 +84,6 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                    
                   </select>
                 </div>
               ) : (
@@ -86,7 +96,6 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                   
                   </select>
                 </div>
               ) : (
@@ -99,7 +108,6 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                    
                   </select>
                 </div>
               ) : (
@@ -110,10 +118,10 @@ const Table = () => {
               <p>Название</p>
               {isHover ? (
                 <div className="select">
-                  <select >
-                    <option selected></option>
-                    <option>синий</option>
-                    <option>красный</option>
+                  <select>
+                    <option value=""></option>
+                    <option value="синий">синий</option>
+                    <option value="красный">красный</option>
                   </select>
                 </div>
               ) : (
@@ -126,7 +134,14 @@ const Table = () => {
         <tbody>
           {orders.map((el) => {
             return (
-             <Row key={el.id} id={el.id} name={el.name} isHover={isHover}/>
+              <Row
+                key={el.id}
+                id={el.id}
+                name={el.name}
+                isHover={isHover}
+                countSelectRow={countSelectRow}
+                setCountSelectRow={setCountSelectRow}
+              />
             );
           })}
         </tbody>
