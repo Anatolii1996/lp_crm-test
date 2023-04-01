@@ -1,6 +1,6 @@
 const Row = ({ id, name }) => {
   return (
-    <tr>
+    <tr className="row_wrap">
       <td>
         <img src="./Untitled.png" />
       </td>
