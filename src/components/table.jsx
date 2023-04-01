@@ -57,7 +57,7 @@ const Table = () => {
 
   return (
     <div
-      className="table_wrap"
+      className={`table_wrap ${isHover?"":"table_offset"}`}
       onMouseOver={() => {
         setIsHover(true);
       }}

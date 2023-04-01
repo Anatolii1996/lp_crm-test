@@ -143,3 +143,28 @@ select {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+.delete{
+  cursor: pointer;
+}
+.buttons_wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+   
+   
+   
+    span{
+       padding: 3px;
+       font-size: 10px;
+       border: 1px solid black;
+       border-radius: 5px;
+    }
+  
+  span+span{
+    margin-top: 15px;
+  }
+}
+.table_offset{
+  margin-right: 15px;
+}

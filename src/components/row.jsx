@@ -22,7 +22,7 @@ const Row = ({ id, name, isHover }) => {
       <td className={isRowHower ? "hover" : ""}>XXXX-</td>
       <td className={`id_number ${isRowHower ? "hover" : ""}`}>{id}</td>
       <td className={`product_name ${isRowHower ? "hover" : ""}`}>{name}</td>
-      {isHover && <td >
+      {isHover && <td className="delete">
         ✖️
       </td> }
     </tr>
