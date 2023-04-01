@@ -75,7 +75,7 @@ if(countSelectRow>0){
                     {ordersArr.map((el)=>{
                       return(
                         
-                        <option >{el.name}</option>
+                        <option key={el.id}>{el.name}</option>
                       )
                     })}
                     

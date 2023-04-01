@@ -15,7 +15,7 @@ const Images = () => {
 <div className="icons_menu">
 {imageURL.map((el)=>{
     return(
-        <img src={el}  />
+        <img key={el} src={el}  />
     )
 })}
 </div>

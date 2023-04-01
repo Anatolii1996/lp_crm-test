@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Images from "./images";
 
 const Row = ({
@@ -11,6 +11,7 @@ const Row = ({
   ordersArr,
   icon,
 }) => {
+    const imagesRef = useRef(null);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -35,6 +36,19 @@ const Row = ({
     }
   }, [isRowSelect]);
 
+  const handleParentClick = (e) => {
+    if (!imagesRef.current || !imagesRef.current.contains(e.target)) {
+      setImgMenuOpen(false);
+    }
+  };
+
+  
+  useEffect(() => {
+    document.addEventListener("click", handleParentClick);
+    return () => {
+      document.removeEventListener("click", handleParentClick);
+    };
+  }, []);
   return (
     <tr
       className={`row_wrap ${
@@ -133,7 +147,9 @@ const Row = ({
         }}
       >
         {!inputValue ? (
-          <input
+            <div className="icon_name_wrap">
+              <img src="./icons/Group.png" />
+              <input
             id="input_name"
             className="input_name"
             type="text"
@@ -143,10 +159,13 @@ const Row = ({
             }}
             onKeyDown={(e) => {
               if (e.keyCode === 13) {
-                setOrdersArr([{ id: idVal, name: nameVal }, ...ordersArr]);
+                setOrdersArr([{ id: idVal,icons:"./icons/Group.png", name: nameVal }, ...ordersArr]);
               }
             }}
           />
+            </div>
+          
+         
         ) : rowDisabled ? (
           <div className="icon_name_wrap">
             <img src={icon} />
@@ -164,7 +183,7 @@ const Row = ({
               setInputValue(e.target.value);
             }}
           />
-          {imgMenuOpen&&<Images/>}
+          {imgMenuOpen&&<Images ref={imagesRef}/>}
           
             </div>
          
