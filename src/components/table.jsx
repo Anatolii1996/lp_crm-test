@@ -66,6 +66,7 @@ const Table = () => {
       <table>
         <thead>
           <tr className="table_wrap_header">
+            <td></td>
             <td className="status">
               <p>Статус</p>{" "}
               {isHover ? (

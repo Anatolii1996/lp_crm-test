@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   .table_wrap {
+    margin-top: 50px;
     table {
       border-collapse: collapse;
       width: 40%;
@@ -113,17 +114,32 @@ select {
   }
 };
 .product_name{
+ 
   .select{
     select{
       width: 85px
     }
   }
+ .space{
+  width: 85px;
+ }
 }
 .space{
   height: 17px;
+ 
 }
-.row_wrap{
-  &:hover{
-    background-color: lightgray;
-  }
+.hover{
+  background-color: lightgray;
+}
+// .row_wrap{
+//   &:hover{
+//     background-color: lightgray;
+//   }
+// }
+.hover_border{
+  height: 19.5px;
+  width: 8px;
+  background-color: #515151;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
