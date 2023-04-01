@@ -4,6 +4,7 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
+  const [isNameClicked, setIsNameClicked] = useState(false);
 
   useEffect(() => {
     if (isRowSelect) {
@@ -15,7 +16,7 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
 
   return (
     <tr
-      className={`row_wrap ${isDeleteHover?"transparent":""}`}
+      className={`row_wrap ${isDeleteHover ? "transparent" : ""}`}
       onMouseOver={() => {
         setIsRowHower(true);
       }}
@@ -82,8 +83,11 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
             ? "row_select"
             : "hover"
         }`}
+        onClick={() => {
+            setIsNameClicked(true);
+          }}
       >
-        {name}
+        {isNameClicked?<input type="text" value={name}/>:  name}
       </td>
       {isHover && (
         <td
