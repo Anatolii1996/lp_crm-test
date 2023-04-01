@@ -5,6 +5,7 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
   const [isNameClicked, setIsNameClicked] = useState(false);
+  const [inputValue, setInputValue] = useState(name);
 
   useEffect(() => {
     if (isRowSelect) {
@@ -84,10 +85,22 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
             : "hover"
         }`}
         onClick={() => {
-            setIsNameClicked(true);
-          }}
+          setIsNameClicked(true);
+        }}
       >
-        {isNameClicked?<input type="text" value={name}/>:  name}
+        {isNameClicked ? (
+          <input
+            autoFocus
+            className="input_name"
+            type="text"
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+            }}
+          />
+        ) : (
+          name
+        )}
       </td>
       {isHover && (
         <td
