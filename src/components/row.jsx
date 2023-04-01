@@ -199,6 +199,9 @@ const Row = ({
           onMouseOut={() => {
             setIsDeleteHover(false);
           }}
+          onClick={()=>{
+            setOrdersArr(ordersArr.filter(el=>el.name!=inputValue))
+          }}
         >
           ✖️
         </td>
