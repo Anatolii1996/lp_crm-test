@@ -3,7 +3,7 @@ import Row from "./row";
 
 const Table = ({ setAnySelectRow, ordersArr, setOrdersArr }) => {
 
-  const [isHover, setIsHover] = useState(false);
+  const [isHover, setIsHover] = useState(true);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
   useEffect(()=>{
@@ -21,7 +21,7 @@ if(countSelectRow>0){
         setIsHover(true);
       }}
       onMouseOut={() => {
-        setIsHover(false);
+        setIsHover(true);
       }}
     >
       <table>
@@ -68,10 +68,17 @@ if(countSelectRow>0){
               <p>Название</p>
               {isHover ? (
                 <div className="select">
-                  <select>
-                    <option value=""></option>
-                    <option value="синий">синий</option>
-                    <option value="красный">красный</option>
+                   
+                  <select >
+                   
+                  <option></option>
+                    {ordersArr.map((el)=>{
+                      return(
+                        
+                        <option >{el.name}</option>
+                      )
+                    })}
+                    
                   </select>
                 </div>
               ) : (
@@ -88,6 +95,7 @@ if(countSelectRow>0){
                 key={el.id}
                 id={el.id}
                 name={el.name}
+                icon={el.icons}
                 isHover={isHover}
                 countSelectRow={countSelectRow}
                 setCountSelectRow={setCountSelectRow}

@@ -122,7 +122,7 @@ select {
     }
   }
  .space{
-  width: 85px;
+  width:105px;
  }
 }
 .space{
@@ -175,9 +175,25 @@ select {
 }
 .input_name{
   border: 0;
+  display: inline-block;
   width: 85px;
+  text-overflow: ellipsis;
+  height: 19.5px;
 }
 .input_id{
   border: 0;
   width: 21px;
+}
+.tr{
+  height: 19.5px;
+  
+}
+.icon_name_wrap{
+  display: flex;
+  width: 105px;
+  text-overflow: ellipsis;
+  img{
+    width: 15px;
+    margin-right: 3px;
+  }
 }

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow, setOrdersArr, ordersArr }) => {
+const Row = ({
+  id,
+  name,
+  isHover,
+  setCountSelectRow,
+  countSelectRow,
+  setOrdersArr,
+  ordersArr,
+  icon,
+}) => {
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -99,12 +108,14 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow, setOrdersAr
                 document.querySelector("#input_name").focus();
               }
             }}
-            onChange={(e)=>{setIdVal(e.target.value)}}
+            onChange={(e) => {
+              setIdVal(e.target.value);
+            }}
           />
         )}
       </td>
       <td
-        className={`${
+        className={`name_order ${
           !isRowHower
             ? isRowSelect
               ? "row_select"
@@ -117,25 +128,26 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow, setOrdersAr
           setIsNameClicked(true);
         }}
       >
-        {!name ? (
+        {!inputValue ? (
           <input
             id="input_name"
             className="input_name"
             type="text"
             tabIndex={2}
-
-            onChange={(e)=>{
-                setNameVal(e.target.value)
+            onChange={(e) => {
+              setNameVal(e.target.value);
             }}
-
             onKeyDown={(e) => {
               if (e.keyCode === 13) {
-                setOrdersArr([{id:idVal, name:nameVal},...ordersArr])
+                setOrdersArr([{ id: idVal, name: nameVal }, ...ordersArr]);
               }
             }}
           />
         ) : rowDisabled ? (
-          name
+          <div className="icon_name_wrap">
+            <img src={icon} />
+            <span className="input_name">{inputValue}</span>
+          </div>
         ) : isNameClicked ? (
           <input
             autoFocus
@@ -147,7 +159,10 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow, setOrdersAr
             }}
           />
         ) : (
-          name
+            <div className="icon_name_wrap">
+            <img src={icon} />
+            <span className="input_name">{inputValue}</span>
+          </div>
         )}
       </td>
       {isHover && (

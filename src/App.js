@@ -8,50 +8,62 @@ function App() {
   const orders = [
     {
       id: 1,
+      icons:"./icons/Group.png",
       name: "Синий",
     },
     {
       id: 2,
+      icons:"./icons/Group.png",
       name: "39-й размер",
     },
     {
       id: 32,
+      icons:"./icons/Vector (3).png",
       name: "39,5 размер",
     },
     {
       id: 65,
+      icons:"./icons/Vector (3).png",
       name: "40-й размер",
     },
     {
       id: 4,
+      icons:"./icons/Vector (3).png",
       name: "41-размер",
     },
     {
       id: 134,
+      icons:"./icons/Vector (3).png",
       name: "8GB",
     },
     {
       id: 7,
+      icons:"./icons/Group.png",
       name: "16GB",
     },
     {
       id: 98,
+      icons:"./icons/Group.png",
       name: "32GB",
     },
     {
       id: 6,
+      icons:"./icons/Group.png",
       name: "Space grey",
     },
     {
       id: 56,
+      icons:"./icons/Group.png",
       name: "Rose gold",
     },
     {
       id: 78,
+      icons:"./icons/Group.png",
       name: "Silver",
     },
     {
       id: 135,
+      icons:"./icons/Group.png",
       name: "Silver",
     },
   ];
