@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
 
-const Table = ({ setAnySelectRow, ordersArr, setOrdersArr }) => {
+const Table = ({ setAnySelectRow, ordersArr, setOrdersArr, imgMenuOpen, setImgMenuOpen }) => {
 
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
-  const [imgMenuOpen, setImgMenuOpen] = useState(false);
+ 
 
   useEffect(()=>{
 if(countSelectRow>0){
@@ -25,11 +25,7 @@ if(countSelectRow>0){
       onMouseOut={() => {
         setIsHover(false);
       }}
-      onClick={()=>{
-        if(imgMenuOpen){
-          setImgMenuOpen(false);
-     }
-      }}
+     
     >
       <table>
         <thead>
