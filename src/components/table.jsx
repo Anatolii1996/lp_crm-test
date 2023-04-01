@@ -52,7 +52,7 @@ const Table = ({ setAnySelectRow }) => {
       name: "Silver",
     },
   ];
-
+const[ordersArr, setOrdersArr]=useState(orders)
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
@@ -132,7 +132,7 @@ if(countSelectRow>0){
           </tr>
         </thead>
         <tbody>
-          {orders.map((el) => {
+          {ordersArr.map((el) => {
             return (
               <Row
                 key={el.id}
