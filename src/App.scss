@@ -154,16 +154,13 @@ select {
 .buttons_wrap{
   display: flex;
   flex-direction: column;
- 
-  
-   
-   
    
     span{
        padding: 2px;
        font-size: 6px;
        border: 1px solid black;
        border-radius: 3px;
+       cursor: pointer;
     }
   
   span+span{

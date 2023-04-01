@@ -1,7 +1,7 @@
-const Buttons = ({ anySelectRow }) => {
+const Buttons = ({ anySelectRow, addNewOrder }) => {
   return (
     <div className="buttons_wrap">
-      <span>➕</span>
+      <span onClick={()=>{addNewOrder()}}>➕</span>
       {anySelectRow && <span>✖️</span>}
     </div>
   );

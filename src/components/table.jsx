@@ -1,58 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
 
-const Table = ({ setAnySelectRow }) => {
-  const orders = [
-    {
-      id: 1,
-      name: "Синий",
-    },
-    {
-      id: 2,
-      name: "39-й размер",
-    },
-    {
-      id: 32,
-      name: "39,5 размер",
-    },
-    {
-      id: 65,
-      name: "40-й размер",
-    },
-    {
-      id: 4,
-      name: "41-размер",
-    },
-    {
-      id: 134,
-      name: "8GB",
-    },
-    {
-      id: 7,
-      name: "16GB",
-    },
-    {
-      id: 98,
-      name: "32GB",
-    },
-    {
-      id: 6,
-      name: "Space grey",
-    },
-    {
-      id: 56,
-      name: "Rose gold",
-    },
-    {
-      id: 78,
-      name: "Silver",
-    },
-    {
-      id: 135,
-      name: "Silver",
-    },
-  ];
-const[ordersArr, setOrdersArr]=useState(orders)
+const Table = ({ setAnySelectRow, ordersArr }) => {
+
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
@@ -132,7 +82,7 @@ if(countSelectRow>0){
           </tr>
         </thead>
         <tbody>
-          {ordersArr.map((el) => {
+          {ordersArr&&ordersArr.map((el) => {
             return (
               <Row
                 key={el.id}
