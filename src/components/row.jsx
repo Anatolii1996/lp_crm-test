@@ -6,7 +6,11 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
   const [isDeleteHover, setIsDeleteHover] = useState(false);
   const [isNameClicked, setIsNameClicked] = useState(false);
   const [inputValue, setInputValue] = useState(name);
-  const [rowDisabled, setRowDisabled]=useState(false);
+  const [rowDisabled, setRowDisabled] = useState(false);
+
+  useEffect(()=>{
+    setIsNameClicked(false)
+  }, [rowDisabled])
 
   useEffect(() => {
     if (isRowSelect) {
@@ -17,8 +21,10 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
   }, [isRowSelect]);
 
   return (
-    <tr 
-      className={`row_wrap ${isDeleteHover||rowDisabled ? "transparent" : ""} `}
+    <tr
+      className={`row_wrap ${
+        isDeleteHover || rowDisabled ? "transparent" : ""
+      } `}
       onMouseOver={() => {
         setIsRowHower(true);
       }}
@@ -46,12 +52,11 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
             ? "row_select"
             : "hover"
         }`}
-        onClick={()=>{
-            setRowDisabled(!rowDisabled)
+        onClick={() => {
+          setRowDisabled(!rowDisabled);
         }}
       >
-        
-        <img src={rowDisabled?"./Frame 88.png":"./Untitled.png" }/>
+        <img src={rowDisabled ? "./Frame 88.png" : "./Untitled.png"} />
       </td>
       <td
         className={`${
@@ -93,7 +98,9 @@ const Row = ({ id, name, isHover, setCountSelectRow, countSelectRow }) => {
           setIsNameClicked(true);
         }}
       >
-        {isNameClicked ? (
+        {
+        rowDisabled?name:
+        isNameClicked ? (
           <input
             autoFocus
             className="input_name"
