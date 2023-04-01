@@ -149,7 +149,9 @@ const Row = ({
             <span className="input_name">{inputValue}</span>
           </div>
         ) : isNameClicked ? (
-          <input
+            <div className="icon_name_wrap">
+            <img src={icon} />
+             <input
             autoFocus
             className="input_name"
             type="text"
@@ -158,6 +160,8 @@ const Row = ({
               setInputValue(e.target.value);
             }}
           />
+            </div>
+         
         ) : (
             <div className="icon_name_wrap">
             <img src={icon} />
