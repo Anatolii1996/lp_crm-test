@@ -11,7 +11,7 @@ const Row = ({
   ordersArr,
   icon,
 }) => {
-    const imagesRef = useRef(null);
+  // const imagesRef = useRef(null);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -22,7 +22,13 @@ const Row = ({
   const [idVal, setIdVal] = useState("");
   const [nameVal, setNameVal] = useState("");
 
-  const[imgMenuOpen, setImgMenuOpen]=useState(false);
+  const [imgMenuOpen, setImgMenuOpen] = useState(false);
+
+  const [imgIcon, setImgIcon] = useState(icon);
+
+  useEffect(()=>{
+    setImgMenuOpen(false)
+  }, [imgIcon])
 
   useEffect(() => {
     setIsNameClicked(false);
@@ -36,19 +42,18 @@ const Row = ({
     }
   }, [isRowSelect]);
 
-  const handleParentClick = (e) => {
-    if (!imagesRef.current || !imagesRef.current.contains(e.target)) {
-      setImgMenuOpen(false);
-    }
-  };
+//   const handleParentClick = (e) => {
+//     if (!imagesRef.current || !imagesRef.current.contains(e.target)) {
+//       setImgMenuOpen(false);
+//     }
+//   };
 
-  
-  useEffect(() => {
-    document.addEventListener("click", handleParentClick);
-    return () => {
-      document.removeEventListener("click", handleParentClick);
-    };
-  }, []);
+  //   useEffect(() => {
+  //     document.addEventListener("click", handleParentClick);
+  //     return () => {
+  //       document.removeEventListener("click", handleParentClick);
+  //     };
+  //   }, []);
   return (
     <tr
       className={`row_wrap ${
@@ -147,51 +152,49 @@ const Row = ({
         }}
       >
         {!inputValue ? (
-            <div className="icon_name_wrap">
-              <img src="./icons/Group.png" />
-              <input
-            id="input_name"
-            className="input_name"
-            type="text"
-            tabIndex={2}
-            onChange={(e) => {
-              setNameVal(e.target.value);
-            }}
-            onKeyDown={(e) => {
-              if (e.keyCode === 13) {
-                setOrdersArr([{ id: idVal,icons:"./icons/Group.png", name: nameVal }, ...ordersArr]);
-              }
-            }}
-          />
-            </div>
-          
-         
+          <div className="icon_name_wrap">
+            <img src="./icons/Group.png" />
+            <input
+              id="input_name"
+              className="input_name"
+              type="text"
+              tabIndex={2}
+              onChange={(e) => {
+                setNameVal(e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.keyCode === 13) {
+                  setOrdersArr([
+                    { id: idVal, icons: "./icons/Group.png", name: nameVal },
+                    ...ordersArr,
+                  ]);
+                }
+              }}
+            />
+          </div>
         ) : rowDisabled ? (
           <div className="icon_name_wrap">
-            <img src={icon} />
-            <input type="text" className="input_name" value={inputValue}/>
+            <img src={imgIcon} />
+            <input type="text" className="input_name" value={inputValue} />
           </div>
         ) : isNameClicked ? (
-            <div className="icon_name_wrap">
-            <img src={icon} />
-             <input
-            autoFocus
-            className="input_name"
-            type="text"
-            value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-            }}
-          />
-          {imgMenuOpen&&<Images ref={imagesRef}/>}
-          
-            </div>
-         
+          <div className="icon_name_wrap">
+            <img src={imgIcon} />
+            <input
+              autoFocus
+              className="input_name"
+              type="text"
+              value={inputValue}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+              }}
+            />
+            {imgMenuOpen && <Images  setImgIcon={setImgIcon} />}
+          </div>
         ) : (
-            <div className="icon_name_wrap">
-            <img src={icon} />
-            <input type="text" className="input_name" value={inputValue}/>
-           
+          <div className="icon_name_wrap">
+            <img src={imgIcon} />
+            <input type="text" className="input_name" value={inputValue} />
           </div>
         )}
       </td>

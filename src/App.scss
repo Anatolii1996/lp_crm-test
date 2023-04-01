@@ -174,10 +174,12 @@ select {
   text-overflow: ellipsis;
   height: 19.5px;
   background-color: transparent;
+ 
 }
 .input_id {
   border: 0;
   width: 21px;
+  border-bottom: 1px solid black;
 }
 .tr {
   height: 19.5px;

@@ -1,4 +1,4 @@
-const Images = () => {
+const Images = ({ setImgIcon}) => {
   const imageURL = [
     "./icons/Amazon.png",
     "./icons/Autolux.png",
@@ -9,16 +9,22 @@ const Images = () => {
     "./icons/Fotos.png",
     "./icons/Group 80.png",
     "./icons/Group 81.png",
-    
   ];
-  return(
-<div className="icons_menu">
-{imageURL.map((el)=>{
-    return(
-        <img key={el} src={el}  />
-    )
-})}
-</div>
-  )
+  return (
+    <div className="icons_menu">
+      {imageURL.map((el) => {
+        return (
+          <img
+            onClick={() => {
+              setImgIcon(el);
+              
+            }}
+            key={el}
+            src={el}
+          />
+        );
+      })}
+    </div>
+  );
 };
 export default Images;
