@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Images from "./images";
 
 const Row = ({
@@ -13,7 +13,6 @@ const Row = ({
   imgMenuOpen,
   setImgMenuOpen
 }) => {
-  // const imagesRef = useRef(null);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -24,7 +23,6 @@ const Row = ({
   const [idVal, setIdVal] = useState("");
   const [nameVal, setNameVal] = useState("");
 
-//   const [imgMenuOpen, setImgMenuOpen] = useState(false);
 
   const [imgIcon, setImgIcon] = useState(icon);
 
@@ -44,18 +42,7 @@ const Row = ({
     }
   }, [isRowSelect]);
 
-//   const handleParentClick = (e) => {
-//     if (!imagesRef.current || !imagesRef.current.contains(e.target)) {
-//       setImgMenuOpen(false);
-//     }
-//   };
 
-  //   useEffect(() => {
-  //     document.addEventListener("click", handleParentClick);
-  //     return () => {
-  //       document.removeEventListener("click", handleParentClick);
-  //     };
-  //   }, []);
   return (
     <tr
       className={`row_wrap ${
@@ -193,7 +180,7 @@ const Row = ({
                 setInputValue(e.target.value);
               }}
             />
-            {imgMenuOpen && <Images  setImgIcon={setImgIcon} />}
+            {imgMenuOpen && <Images  setImgIcon={setImgIcon} imgIcon={imgIcon}/>}
           </div>
         ) : (
           <div className="icon_name_wrap">
