@@ -73,8 +73,7 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                    <option>синий</option>
-                    <option>красный</option>
+                    
                   </select>
                 </div>
               ) : (
@@ -87,8 +86,7 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                    <option>синий</option>
-                    <option>красный</option>
+                   
                   </select>
                 </div>
               ) : (
@@ -101,8 +99,7 @@ const Table = () => {
                 <div className="select">
                   <select>
                     <option selected></option>
-                    <option>синий</option>
-                    <option>красный</option>
+                    
                   </select>
                 </div>
               ) : (
@@ -123,12 +120,13 @@ const Table = () => {
                 <div className="space"></div>
               )}
             </td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
           {orders.map((el) => {
             return (
-             <Row key={el.id} id={el.id} name={el.name}/>
+             <Row key={el.id} id={el.id} name={el.name} isHover={isHover}/>
             );
           })}
         </tbody>
