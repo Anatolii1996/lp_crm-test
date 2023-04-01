@@ -10,6 +10,8 @@ const Row = ({
   setOrdersArr,
   ordersArr,
   icon,
+  imgMenuOpen,
+  setImgMenuOpen
 }) => {
   // const imagesRef = useRef(null);
   const [isRowHower, setIsRowHower] = useState(false);
@@ -22,7 +24,7 @@ const Row = ({
   const [idVal, setIdVal] = useState("");
   const [nameVal, setNameVal] = useState("");
 
-  const [imgMenuOpen, setImgMenuOpen] = useState(false);
+//   const [imgMenuOpen, setImgMenuOpen] = useState(false);
 
   const [imgIcon, setImgIcon] = useState(icon);
 
@@ -67,9 +69,7 @@ const Row = ({
       }}
       onClick={() => {
         setIsRowSelect(!isRowSelect);
-        if(imgMenuOpen){
-             setImgMenuOpen(false);
-        }
+       
        
       }}
     >

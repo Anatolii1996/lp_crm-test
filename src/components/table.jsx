@@ -6,6 +6,8 @@ const Table = ({ setAnySelectRow, ordersArr, setOrdersArr }) => {
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
+  const [imgMenuOpen, setImgMenuOpen] = useState(false);
+
   useEffect(()=>{
 if(countSelectRow>0){
   setAnySelectRow(true)
@@ -22,6 +24,11 @@ if(countSelectRow>0){
       }}
       onMouseOut={() => {
         setIsHover(false);
+      }}
+      onClick={()=>{
+        if(imgMenuOpen){
+          setImgMenuOpen(false);
+     }
       }}
     >
       <table>
@@ -101,6 +108,8 @@ if(countSelectRow>0){
                 setCountSelectRow={setCountSelectRow}
                 setOrdersArr={setOrdersArr}
                 ordersArr={ordersArr}
+                imgMenuOpen={imgMenuOpen}
+                setImgMenuOpen={setImgMenuOpen}
               />
             );
           })}
