@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Row from "./row";
 
 const Table = () => {
   const orders = [
@@ -60,7 +61,7 @@ const Table = () => {
       onMouseOver={() => {
         setIsHover(true);
       }}
-      onMouseOut={() => [setIsHover(false)]}
+      onMouseOut={() => {setIsHover(false)}}
     >
       <table>
         <thead>
@@ -126,14 +127,7 @@ const Table = () => {
         <tbody>
           {orders.map((el) => {
             return (
-              <tr key={el.id}>
-                <td>
-                  <img src="./Untitled.png" />
-                </td>
-                <td>XXXX-</td>
-                <td className="id_number">{el.id}</td>
-                <td className="order_name">{el.name}</td>
-              </tr>
+             <Row key={el.id} id={el.id} name={el.name}/>
             );
           })}
         </tbody>
