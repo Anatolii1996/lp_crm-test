@@ -3,7 +3,7 @@ import Row from "./row";
 
 const Table = ({ setAnySelectRow, ordersArr, setOrdersArr }) => {
 
-  const [isHover, setIsHover] = useState(true);
+  const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(1);
 
   useEffect(()=>{
@@ -21,7 +21,7 @@ if(countSelectRow>0){
         setIsHover(true);
       }}
       onMouseOut={() => {
-        setIsHover(true);
+        setIsHover(false);
       }}
     >
       <table>

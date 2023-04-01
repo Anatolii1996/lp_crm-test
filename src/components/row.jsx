@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Images from "./images";
 
 const Row = ({
   id,
@@ -19,6 +20,8 @@ const Row = ({
 
   const [idVal, setIdVal] = useState("");
   const [nameVal, setNameVal] = useState("");
+
+  const[imgMenuOpen, setImgMenuOpen]=useState(false);
 
   useEffect(() => {
     setIsNameClicked(false);
@@ -126,6 +129,7 @@ const Row = ({
         }`}
         onClick={() => {
           setIsNameClicked(true);
+          setImgMenuOpen(true);
         }}
       >
         {!inputValue ? (
@@ -160,6 +164,8 @@ const Row = ({
               setInputValue(e.target.value);
             }}
           />
+          {imgMenuOpen&&<Images/>}
+          
             </div>
          
         ) : (
