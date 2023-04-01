@@ -110,7 +110,7 @@ const Table = () => {
               <p>Название</p>
               {isHover ? (
                 <div className="select">
-                  <select>
+                  <select >
                     <option selected></option>
                     <option>синий</option>
                     <option>красный</option>

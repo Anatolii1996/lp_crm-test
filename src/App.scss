@@ -132,6 +132,10 @@ select {
 .hover{
   background-color: lightgray;
 }
+.row_select{
+  background-color:gray ;
+  // outline-width: ;
+}
 // .row_wrap{
 //   &:hover{
 //     background-color: lightgray;
@@ -141,8 +145,8 @@ select {
   height: 19.5px;
   width: 8px;
   background-color: #515151;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .delete{
   cursor: pointer;

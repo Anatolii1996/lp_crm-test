@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Row = ({ id, name, isHover }) => {
   const [isRowHower, setIsRowHower] = useState(false);
+  const [isRowSelect, setIsRowSelect] = useState(false);
 
   return (
     <tr
@@ -12,16 +13,20 @@ const Row = ({ id, name, isHover }) => {
       onMouseOut={() => {
         setIsRowHower(false);
       }}
+      onClick={()=>{
+        setIsRowSelect(!isRowSelect)
+       
+      }}
     >
       <td>
-        <div className={isRowHower ? `hover_border` : ""}></div>
+        <div className={`${isRowHower ? "hover_border" : isRowSelect?"hover_border":""} `}></div>
       </td>
-      <td className={isRowHower ? "hover" : ""}>
+      <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>
         <img src="./Untitled.png" />
       </td>
-      <td className={isRowHower ? "hover" : ""}>XXXX-</td>
-      <td className={`id_number ${isRowHower ? "hover" : ""}`}>{id}</td>
-      <td className={`product_name ${isRowHower ? "hover" : ""}`}>{name}</td>
+      <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>XXXX-</td>
+      <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>{id}</td>
+      <td className={`${!isRowHower ? isRowSelect ? "row_select" : "" : isRowSelect ? "row_select" : "hover"}`}>{name}</td>
       {isHover && <td className="delete">
         ✖️
       </td> }
