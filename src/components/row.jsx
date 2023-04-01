@@ -146,7 +146,7 @@ const Row = ({
         ) : rowDisabled ? (
           <div className="icon_name_wrap">
             <img src={icon} />
-            <span className="input_name">{inputValue}</span>
+            <input type="text" className="input_name" value={inputValue}/>
           </div>
         ) : isNameClicked ? (
             <div className="icon_name_wrap">
@@ -165,7 +165,8 @@ const Row = ({
         ) : (
             <div className="icon_name_wrap">
             <img src={icon} />
-            <span className="input_name">{inputValue}</span>
+            <input type="text" className="input_name" value={inputValue}/>
+           
           </div>
         )}
       </td>
