@@ -11,9 +11,10 @@ body {
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 50px;
   .table_wrap {
-    margin-top: 50px;
+   
     table {
       border-collapse: collapse;
       width: 40%;
@@ -149,7 +150,7 @@ select {
 .buttons_wrap{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+ 
   
    
    
