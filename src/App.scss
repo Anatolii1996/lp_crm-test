@@ -207,4 +207,8 @@ select {
     height: 12px;
     cursor: pointer;
   }
+  .no_select{
+    cursor: not-allowed;;
+  }
 }
+
