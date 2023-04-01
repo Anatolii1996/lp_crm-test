@@ -1,3 +1,5 @@
+import Icon from "./icon";
+
 const Images = ({ setImgIcon, imgIcon}) => {
   const imageURL = [
     "./icons/Amazon.png",
@@ -16,17 +18,7 @@ const Images = ({ setImgIcon, imgIcon}) => {
     <div className="icons_menu">
       {imageURL.map((el) => {
         return (
-          <img className={`${el==imgIcon?"transparent":""}`} 
-            onClick={() => {
-               if(el!=imgIcon){
-                 setImgIcon(el);
-               }
-             
-              
-            }}
-            key={el}
-            src={el}
-          />
+         <Icon key={el} el={el} imgIcon={imgIcon} setImgIcon={setImgIcon}/>
         );
       })}
     </div>
