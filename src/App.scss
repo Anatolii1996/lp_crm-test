@@ -186,6 +186,7 @@ select {
   width: 105px;
   text-overflow: ellipsis;
   flex-wrap: wrap;
+  
   img {
     width: 12px;
     height: 12px;
@@ -196,9 +197,10 @@ select {
   background-color: #ffff;
   padding: 5px;
   width: 105px;
-  height: 105px;
+  // height: 105px;
   display: flex;
   flex-wrap: wrap;
+  row-gap: 5px;
   position: absolute;
   top: 105px;
   img {

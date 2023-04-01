@@ -13,6 +13,7 @@ const Row = ({
   imgMenuOpen,
   setImgMenuOpen
 }) => {
+    const[elId, setElId]=useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -200,7 +201,7 @@ const Row = ({
             setIsDeleteHover(false);
           }}
           onClick={()=>{
-            setOrdersArr(ordersArr.filter(el=>el.name!=inputValue))
+            setOrdersArr(ordersArr.filter(el=>el.id!=elId))
           }}
         >
           ✖️
