@@ -167,7 +167,7 @@ const Row = ({
         ) : rowDisabled ? (
           <div className="icon_name_wrap">
             <img src={imgIcon} />
-            <p>{inputValue}</p>
+            <p className="row_select">{inputValue}</p>
           </div>
         ) : isNameClicked ? (
           <div className="icon_name_wrap">
