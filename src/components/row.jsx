@@ -11,9 +11,9 @@ const Row = ({
   ordersArr,
   icon,
   imgMenuOpen,
-  setImgMenuOpen
+  setImgMenuOpen,
 }) => {
-    const[elId]=useState(id);
+  const [elId] = useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -24,19 +24,15 @@ const Row = ({
   const [idVal, setIdVal] = useState("");
   const [nameVal, setNameVal] = useState("");
 
-
   const [imgIcon, setImgIcon] = useState(icon);
 
-  useEffect(()=>{
-    setImgMenuOpen(false)
-  }, [imgIcon])
+  useEffect(() => {
+    setImgMenuOpen(false);
+  }, [imgIcon]);
 
   useEffect(() => {
     setIsNameClicked(false);
   }, [rowDisabled]);
-
- 
-
 
   return (
     <tr
@@ -50,14 +46,12 @@ const Row = ({
         setIsRowHower(false);
       }}
       onClick={() => {
-        if(isRowSelect){
-          decrementRow()
-        }else{
-          incrementRow()
+        if (isRowSelect) {
+          decrementRow();
+        } else {
+          incrementRow();
         }
         setIsRowSelect(!isRowSelect);
-       
-       
       }}
     >
       <td>
@@ -128,7 +122,7 @@ const Row = ({
         )}
       </td>
       <td
-        className={`name_order ${
+        className={` ${
           !isRowHower
             ? isRowSelect
               ? "row_select"
@@ -142,54 +136,68 @@ const Row = ({
           setImgMenuOpen(true);
         }}
       >
-        {!inputValue ? (
-          <div className="icon_name_wrap">
-            <img src="./icons/Group.png" />
-            <input
-              id="input_name"
-              className="input_name"
-              type="text"
-              tabIndex={2}
-              onChange={(e) => {
-                setNameVal(e.target.value);
-              }}
-              onKeyDown={(e) => {
-                if (e.keyCode === 13) {
-                  setOrdersArr([
-                    { id: idVal, icons: "./icons/Group.png", name: nameVal },
-                    ...ordersArr,
-                  ]);
-                }
-              }}
-            />
-          </div>
-        ) :
-              
-        rowDisabled ? (
-          <div className="icon_name_wrap">
-            <img src={imgIcon} />
-            <p >{inputValue}</p>
-          </div>
-        ) : isNameClicked ? (
-          <div className="icon_name_wrap">
-            <img src={imgIcon} />
-            <input
-              autoFocus
-              className="input_name"
-              type="text"
-              value={inputValue}
-              onChange={(e) => {
-                setInputValue(e.target.value);
-              }}
-            />
-            {imgMenuOpen && <Images key={id}  setImgIcon={setImgIcon} imgIcon={imgIcon}/>}
-          </div>
-        ) : (
-          <div className="icon_name_wrap">
-            <img src={imgIcon} />
-            <p >{inputValue}</p>
-          </div>
-        )}
+        {(() => {
+          if (!inputValue) {
+            return (
+              <div className="icon_name_wrap">
+                <img src="./icons/Group.png" />
+                <input
+                  id="input_name"
+                  className="input_name"
+                  type="text"
+                  tabIndex={2}
+                  onChange={(e) => {
+                    setNameVal(e.target.value);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13) {
+                      setOrdersArr([
+                        {
+                          id: idVal,
+                          icons: "./icons/Group.png",
+                          name: nameVal,
+                        },
+                        ...ordersArr,
+                      ]);
+                    }
+                  }}
+                />
+              </div>
+            );
+          } else if (rowDisabled) {
+            return (
+              <div className="icon_name_wrap">
+                <img src={imgIcon} />
+                <p>{inputValue}</p>
+              </div>
+            );
+          } else if (isNameClicked) {
+            return (
+              <div className="icon_name_wrap">
+                <img src={imgIcon} />
+                <input
+                  autoFocus
+                  className="input_name"
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                  }}
+                />
+                {imgMenuOpen && (
+                  <Images key={id} setImgIcon={setImgIcon} imgIcon={imgIcon} />
+                )}
+              </div>
+            );
+          } else {
+            return (
+              <div className="icon_name_wrap">
+                <img src={imgIcon} />
+                <p>{inputValue}</p>
+              </div>
+            );
+          }
+        })()}
       </td>
       {isHover && (
         <td
@@ -201,8 +209,8 @@ const Row = ({
           onMouseOut={() => {
             setIsDeleteHover(false);
           }}
-          onClick={()=>{
-            setOrdersArr(ordersArr.filter(el=>el.id!=elId))
+          onClick={() => {
+            setOrdersArr(ordersArr.filter((el) => el.id != elId));
           }}
         >
           ✖️
