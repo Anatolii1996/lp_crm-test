@@ -71,7 +71,8 @@ const Row = ({
             ? "row_select"
             : "hover"
         }`}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           setRowDisabled(!rowDisabled);
         }}
       >
