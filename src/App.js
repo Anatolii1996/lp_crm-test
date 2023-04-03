@@ -71,7 +71,7 @@ function App() {
   const [ordersArr, setOrdersArr] = useState(orders)
 
   const addNewOrder = () => {
-    setOrdersArr([{ id: "", name: "" }, ...ordersArr])
+    setOrdersArr([{ id: "", icons: "./icons/Group.png", name: "" }, ...ordersArr])
   }
 
   return (

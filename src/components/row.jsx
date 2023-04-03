@@ -113,6 +113,7 @@ const Row = ({
             onKeyDown={(e) => {
               if (e.keyCode == 13) {
                 document.querySelector("#input_name").focus();
+                setImgMenuOpen(true);
               }
             }}
             onChange={(e) => {
@@ -140,7 +141,7 @@ const Row = ({
           if (!inputValue) {
             return (
               <div className="icon_name_wrap">
-                <img src="./icons/Group.png" />
+                <img src={imgIcon} />
                 <input
                   id="input_name"
                   className="input_name"
@@ -154,7 +155,7 @@ const Row = ({
                       setOrdersArr([
                         {
                           id: idVal,
-                          icons: "./icons/Group.png",
+                          icons: imgIcon,
                           name: nameVal,
                         },
                         ...ordersArr,
@@ -162,6 +163,9 @@ const Row = ({
                     }
                   }}
                 />
+                {imgMenuOpen && (
+                  <Images key={id} setImgIcon={setImgIcon} imgIcon={imgIcon} />
+                )}
               </div>
             );
           } 
