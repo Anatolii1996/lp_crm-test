@@ -5,8 +5,6 @@ const Row = ({
   id,
   name,
   isHover,
-  // setCountSelectRow,
-  // countSelectRow,
   incrementRow,
   decrementRow,
   setOrdersArr,
@@ -15,7 +13,7 @@ const Row = ({
   imgMenuOpen,
   setImgMenuOpen
 }) => {
-    const[elId, setElId]=useState(id);
+    const[elId]=useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
   const [isRowSelect, setIsRowSelect] = useState(false);
   const [isDeleteHover, setIsDeleteHover] = useState(false);
@@ -37,13 +35,7 @@ const Row = ({
     setIsNameClicked(false);
   }, [rowDisabled]);
 
-  // useEffect(() => {
-  //   if (isRowSelect) {
-  //     setCountSelectRow(countSelectRow + 1);
-  //   } else {
-  //     setCountSelectRow(countSelectRow - 1);
-  //   }
-  // }, [isRowSelect]);
+ 
 
 
   return (
@@ -171,7 +163,9 @@ const Row = ({
               }}
             />
           </div>
-        ) : rowDisabled ? (
+        ) :
+              
+        rowDisabled ? (
           <div className="icon_name_wrap">
             <img src={imgIcon} />
             <p >{inputValue}</p>

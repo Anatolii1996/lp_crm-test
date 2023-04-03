@@ -11,12 +11,12 @@ const Table = ({
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
 
-  const incrementRow=()=>{
-    setCountSelectRow(countSelectRow+1)
-  }
-  const decrementRow=()=>{
-    setCountSelectRow(countSelectRow-1)
-  }
+  const incrementRow = () => {
+    setCountSelectRow(countSelectRow + 1);
+  };
+  const decrementRow = () => {
+    setCountSelectRow(countSelectRow - 1);
+  };
 
   useEffect(() => {
     if (countSelectRow > 0) {
@@ -104,13 +104,10 @@ const Table = ({
                   name={el.name}
                   icon={el.icons}
                   isHover={isHover}
-                  // countSelectRow={countSelectRow}
-                  // setCountSelectRow={setCountSelectRow}
                   setOrdersArr={setOrdersArr}
                   ordersArr={ordersArr}
                   imgMenuOpen={imgMenuOpen}
                   setImgMenuOpen={setImgMenuOpen}
-
                   incrementRow={incrementRow}
                   decrementRow={decrementRow}
                 />
