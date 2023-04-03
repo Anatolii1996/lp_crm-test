@@ -211,7 +211,8 @@ const Row = ({
           onMouseOut={() => {
             setIsDeleteHover(false);
           }}
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             setOrdersArr(ordersArr.filter((el) => el.id != elId));
           }}
         >
