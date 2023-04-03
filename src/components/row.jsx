@@ -164,14 +164,16 @@ const Row = ({
                 />
               </div>
             );
-          } else if (rowDisabled) {
+          } 
+          else if (rowDisabled) {
             return (
               <div className="icon_name_wrap">
                 <img src={imgIcon} />
                 <p>{inputValue}</p>
               </div>
             );
-          } else if (isNameClicked) {
+          } 
+          else if (isNameClicked) {
             return (
               <div className="icon_name_wrap">
                 <img src={imgIcon} />
@@ -199,7 +201,7 @@ const Row = ({
           }
         })()}
       </td>
-      {isHover && (
+      {isHover&&!rowDisabled && (
         <td
           className="delete"
           title="Удалить строку"
