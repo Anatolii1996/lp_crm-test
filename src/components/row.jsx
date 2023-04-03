@@ -186,7 +186,7 @@ const Row = ({
         ) : (
           <div className="icon_name_wrap">
             <img src={imgIcon} />
-            <input type="text" className="input_name" value={inputValue} />
+            <p >{inputValue}</p>
           </div>
         )}
       </td>
