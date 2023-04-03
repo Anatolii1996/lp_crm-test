@@ -5,8 +5,10 @@ const Row = ({
   id,
   name,
   isHover,
-  setCountSelectRow,
-  countSelectRow,
+  // setCountSelectRow,
+  // countSelectRow,
+  incrementRow,
+  decrementRow,
   setOrdersArr,
   ordersArr,
   icon,
@@ -35,13 +37,13 @@ const Row = ({
     setIsNameClicked(false);
   }, [rowDisabled]);
 
-  useEffect(() => {
-    if (isRowSelect) {
-      setCountSelectRow(countSelectRow + 1);
-    } else {
-      setCountSelectRow(countSelectRow - 1);
-    }
-  }, [isRowSelect]);
+  // useEffect(() => {
+  //   if (isRowSelect) {
+  //     setCountSelectRow(countSelectRow + 1);
+  //   } else {
+  //     setCountSelectRow(countSelectRow - 1);
+  //   }
+  // }, [isRowSelect]);
 
 
   return (
@@ -56,6 +58,11 @@ const Row = ({
         setIsRowHower(false);
       }}
       onClick={() => {
+        if(isRowSelect){
+          decrementRow()
+        }else{
+          incrementRow()
+        }
         setIsRowSelect(!isRowSelect);
        
        
@@ -181,7 +188,7 @@ const Row = ({
                 setInputValue(e.target.value);
               }}
             />
-            {imgMenuOpen && <Images  setImgIcon={setImgIcon} imgIcon={imgIcon}/>}
+            {imgMenuOpen && <Images key={id}  setImgIcon={setImgIcon} imgIcon={imgIcon}/>}
           </div>
         ) : (
           <div className="icon_name_wrap">

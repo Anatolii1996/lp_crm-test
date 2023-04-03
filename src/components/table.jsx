@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
 
-const Table = ({ setAnySelectRow, ordersArr, setOrdersArr, imgMenuOpen, setImgMenuOpen }) => {
-
+const Table = ({
+  setAnySelectRow,
+  ordersArr,
+  setOrdersArr,
+  imgMenuOpen,
+  setImgMenuOpen,
+}) => {
   const [isHover, setIsHover] = useState(false);
-  const [countSelectRow, setCountSelectRow] = useState(1);
+  const [countSelectRow, setCountSelectRow] = useState(0);
 
- 
+  const incrementRow=()=>{
+    setCountSelectRow(countSelectRow+1)
+  }
+  const decrementRow=()=>{
+    setCountSelectRow(countSelectRow-1)
+  }
 
-  useEffect(()=>{
-if(countSelectRow>0){
-  setAnySelectRow(true)
-}else{
-  setAnySelectRow(false)
-}
-  }, [countSelectRow])
+  useEffect(() => {
+    if (countSelectRow > 0) {
+      setAnySelectRow(true);
+    } else {
+      setAnySelectRow(false);
+    }
+  }, [countSelectRow]);
 
   return (
     <div
@@ -25,7 +35,6 @@ if(countSelectRow>0){
       onMouseOut={() => {
         setIsHover(false);
       }}
-     
     >
       <table>
         <thead>
@@ -71,17 +80,11 @@ if(countSelectRow>0){
               <p>Название</p>
               {isHover ? (
                 <div className="select">
-                   
-                  <select >
-                   
-                  <option></option>
-                    {ordersArr.map((el)=>{
-                      return(
-                        
-                        <option key={el.id}>{el.name}</option>
-                      )
+                  <select>
+                    <option></option>
+                    {ordersArr.map((el) => {
+                      return <option key={el.id}>{el.name}</option>;
                     })}
-                    
                   </select>
                 </div>
               ) : (
@@ -92,23 +95,27 @@ if(countSelectRow>0){
           </tr>
         </thead>
         <tbody>
-          {ordersArr&&ordersArr.map((el) => {
-            return (
-              <Row
-                key={el.id}
-                id={el.id}
-                name={el.name}
-                icon={el.icons}
-                isHover={isHover}
-                countSelectRow={countSelectRow}
-                setCountSelectRow={setCountSelectRow}
-                setOrdersArr={setOrdersArr}
-                ordersArr={ordersArr}
-                imgMenuOpen={imgMenuOpen}
-                setImgMenuOpen={setImgMenuOpen}
-              />
-            );
-          })}
+          {ordersArr &&
+            ordersArr.map((el) => {
+              return (
+                <Row
+                  key={el.id}
+                  id={el.id}
+                  name={el.name}
+                  icon={el.icons}
+                  isHover={isHover}
+                  // countSelectRow={countSelectRow}
+                  // setCountSelectRow={setCountSelectRow}
+                  setOrdersArr={setOrdersArr}
+                  ordersArr={ordersArr}
+                  imgMenuOpen={imgMenuOpen}
+                  setImgMenuOpen={setImgMenuOpen}
+
+                  incrementRow={incrementRow}
+                  decrementRow={decrementRow}
+                />
+              );
+            })}
         </tbody>
       </table>
     </div>
