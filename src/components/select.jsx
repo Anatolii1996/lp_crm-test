@@ -1,47 +1,27 @@
 import { Select } from 'antd';
-import { CaretDownFilled } from '@ant-design/icons';
+import {  useState } from 'react';
 
+const { Option } = Select;
 
-const onChange = (value) => {
-  console.log(`selected ${value}`);
-};
-
-const onSearch = (value) => {
-  console.log('search:', value);
-};
-
-const CustomSelect=()=>{
+const CustomSelect=({arrName})=>{
+    const [value, setValue] = useState([]);
 return(
     <Select
-    showSearch
-    size='small'
-    style={{
-      width: 100,
-      height: "auto",
+    mode="multiple"
+    value={value}
+    onChange={(newValue) => {
+      setValue(newValue);
     }}
-    // placeholder="Select a person"
-    optionFilterProp="children"
-    onChange={onChange}
-    onSearch={onSearch}
-    filterOption={(input, option) =>
-      (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-    }
-    options={[
-      {
-        value: 'jack',
-        label: 'Jack',
-      },
-      {
-        value: 'lucy',
-        label: 'Lucy',
-      },
-      {
-        value: 'tom',
-        label: 'Tom',
-      },
-    ]}
-    suffixIcon={<CaretDownFilled />}
-  />
+    style={{
+      width: '100%',
+    }}
+  >
+    {arrName.map((name) => (
+      <Option key={name} value={name}>
+        {name}
+      </Option>
+    ))}
+  </Select>
 )
 };
 export default CustomSelect;

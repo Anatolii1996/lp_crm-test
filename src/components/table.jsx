@@ -88,7 +88,7 @@ const Table = ({
               <p>Название</p>
               {isHover ? (
                 <div className="select_antd">
-                  <CustomSelect/>
+                  <CustomSelect arrName={arrName}/>
 
                   {/* <select onChange={(e) => setOrdersArr(ordersArr.filter((order) => order.name === e.target.value))}>
                     <option></option>
