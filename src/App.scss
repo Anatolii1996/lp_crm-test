@@ -45,84 +45,28 @@ td + td {
   display: inline-block;
   width: 100px;
 }
-.id_number {
-  .select {
-    select {
-      width: 40px;
-    }
-  }
-}
+
 .table_wrap_header_item {
   display: flex;
   flex-direction: column;
 }
 
-.select {
-  position: relative;
-  display: inline-block;
-}
-.select:after {
-  content: "▼";
-  padding-left: calc(100% - 8px);
-  font-size: 12px;
-  position: absolute;
-  right: 12px;
-  top: 4px;
-  z-index: 1;
-  text-align: center;
-  width: 10%;
-  height: 100%;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 0;
-  border-bottom: 1px solid black;
-  background-color: inherit;
-}
 .space {
-  height: 14px;
+  height: 17px;
   border-bottom: 1px solid black;
 }
-.status {
-  .select {
-    position: relative;
-    display: inline-block;
-    select {
-      width: 46px;
-    }
-  }
-}
-.product {
-  .select {
-    select {
-      width: 41px;
-    }
-  }
-}
+
 .id_number {
-  .select {
-    select {
-      width: 21px;
-    }
+    .space {
+    width: 34px;
   }
 }
 .product_name {
-  .select {
-    select {
-      width: 105px;
-    }
-  }
-  .space {
+    .space {
     width: 105px;
   }
 }
-.space {
-  height: 17px;
-}
+
 .hover {
   background-color: lightgray;
 }
@@ -130,7 +74,7 @@ select {
   background-color: gray;
   color: #ffff;
 }
-// 
+
 .hover_border {
   height: 19.5px;
   width: 8px;
@@ -218,6 +162,8 @@ padding-top: 80px;
 .select_antd{
   height: 18px;
 }
+
+//меняет расзмер селекта
 :where(.css-dev-only-do-not-override-1vtf12y).ant-select-multiple.ant-select-sm.ant-select-show-arrow .ant-select-selector {
   height: 18px;
   line-height: 18px;
@@ -227,9 +173,13 @@ padding-top: 80px;
   border-radius: 0;
  
 }
+
+//меняет цвет границы при hover
 :where(.css-dev-only-do-not-override-1vtf12y).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
   border-color: black;
 };
+
+//сдвигает положение стрелки вправо
 :where(.css-dev-only-do-not-override-1vtf12y).ant-select .ant-select-arrow{
   inset-inline-end: 1px;
 }
