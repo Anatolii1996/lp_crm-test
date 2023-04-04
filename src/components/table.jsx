@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
+import Option from "./option";
 
 const Table = ({
   setAnySelectRow,
@@ -87,10 +88,10 @@ const Table = ({
               <p>Название</p>
               {isHover ? (
                 <div className="select">
-                  <select>
+                  <select onChange={(e) => setOrdersArr(ordersArr.filter((order) => order.name === e.target.value))}>
                     <option></option>
                     {arrName.map((el) => {
-                      return <option key={el}>{el}</option>;
+                      return <Option key={el} el={el} />;
                     })}
                   </select>
                 </div>
