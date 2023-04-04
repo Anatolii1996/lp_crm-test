@@ -225,4 +225,8 @@ padding-top: 80px;
   background-color: transparent;
   border-bottom: 1px solid black;
   border-radius: 0;
+ 
+}
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+  border-color: black;
 }
