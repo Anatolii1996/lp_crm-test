@@ -30,6 +30,19 @@ const Row = ({
     setIsNameClicked(false);
   }, [rowDisabled]);
 
+  const changeName=(e)=>{
+    if (e.keyCode === 13) {
+      setOrdersArr([
+        {
+          id: idVal,
+          icons: imgIcon,
+          name: nameVal,
+        },
+        ...ordersArr,
+      ]);
+    }
+  }
+
   return (
     <tr
       className={`row_wrap ${
@@ -147,18 +160,7 @@ const Row = ({
                   onChange={(e) => {
                     setNameVal(e.target.value);
                   }}
-                  onKeyDown={(e) => {
-                    if (e.keyCode === 13) {
-                      setOrdersArr([
-                        {
-                          id: idVal,
-                          icons: imgIcon,
-                          name: nameVal,
-                        },
-                        ...ordersArr,
-                      ]);
-                    }
-                  }}
+                  onKeyDown={changeName}
                 />
                 {imgMenuOpen && (
                   <Images key={id} setImgIcon={setImgIcon} imgIcon={imgIcon} />
@@ -186,18 +188,7 @@ const Row = ({
                   onChange={(e) => {
                     setInputValue(e.target.value);
                   }}
-                  onKeyDown={(e) => {
-                    if (e.keyCode === 13) {
-                      setOrdersArr([
-                        {
-                          id: idVal,
-                          icons: imgIcon,
-                          name: nameVal,
-                        },
-                        ...ordersArr,
-                      ]);
-                    }
-                  }}
+                  onKeyDown={changeName}
                 />
                 {imgMenuOpen && (
                   <Images key={id} setImgIcon={setImgIcon} imgIcon={imgIcon} />
