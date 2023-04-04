@@ -4,8 +4,13 @@ import { CaretDownOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 
-const CustomSelect = ({ arrName }) => {
+const CustomSelect = ({ arrName  }) => {
   const [value, setValue] = useState([]);
+  const [open, setOpen] = useState(false);
+  
+  const toggleOpen = () => {
+    setOpen(!open);
+  }
   return (
     <Select
       size="small"
@@ -16,8 +21,10 @@ const CustomSelect = ({ arrName }) => {
       }}
       style={{
         width: "100%",
+        
       }}
-      downArrowIcon={<CaretDownOutlined />}
+      suffixIcon={<CaretDownOutlined onClick={toggleOpen}/>}
+      open={open}
     >
       {arrName.map((name) => (
         <Option key={name} value={name}>
