@@ -11,6 +11,13 @@ const Table = ({
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
 
+  const arrName = [];
+  ordersArr.forEach((el) => {
+    if (arrName.indexOf(el.name) == -1) {
+      arrName.push(el.name);
+    }
+  });
+
   const incrementRow = () => {
     setCountSelectRow(countSelectRow + 1);
   };
@@ -82,8 +89,8 @@ const Table = ({
                 <div className="select">
                   <select>
                     <option></option>
-                    {ordersArr.map((el) => {
-                      return <option key={el.id}>{el.name}</option>;
+                    {arrName.map((el) => {
+                      return <option key={el}>{el}</option>;
                     })}
                   </select>
                 </div>
