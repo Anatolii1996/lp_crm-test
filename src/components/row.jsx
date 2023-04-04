@@ -30,6 +30,12 @@ const Row = ({
     setIsNameClicked(false);
   }, [rowDisabled]);
 
+  useEffect(() => {
+    if (!isRowHower) {
+      setIsNameClicked(false);
+    }
+  }, [isRowHower]);
+
   const changeName = (e) => {
     if (e.keyCode === 13) {
       setOrdersArr([
