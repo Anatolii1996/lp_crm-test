@@ -218,7 +218,7 @@ padding-top: 80px;
 .select_antd{
   height: 18px;
 }
-:where(.css-dev-only-do-not-override-1vtf12y).ant-select-single.ant-select-sm:not(.ant-select-customize-input) .ant-select-selector {
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select-multiple.ant-select-sm.ant-select-show-arrow .ant-select-selector {
   height: 18px;
   line-height: 18px;
   border: 0;

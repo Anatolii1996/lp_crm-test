@@ -7,6 +7,7 @@ const CustomSelect=({arrName})=>{
     const [value, setValue] = useState([]);
 return(
     <Select
+  size='small'
     mode="multiple"
     value={value}
     onChange={(newValue) => {

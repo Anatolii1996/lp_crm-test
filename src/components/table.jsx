@@ -89,13 +89,7 @@ const Table = ({
               {isHover ? (
                 <div className="select_antd">
                   <CustomSelect arrName={arrName}/>
-
-                  {/* <select onChange={(e) => setOrdersArr(ordersArr.filter((order) => order.name === e.target.value))}>
-                    <option></option>
-                    {arrName.map((el) => {
-                      return <Option key={el} el={el} />;
-                    })}
-                  </select> */}
+        
                 </div>
               ) : (
                 <div className="space"></div>

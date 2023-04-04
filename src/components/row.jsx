@@ -30,7 +30,7 @@ const Row = ({
     setIsNameClicked(false);
   }, [rowDisabled]);
 
-  const changeName=(e)=>{
+  const changeName = (e) => {
     if (e.keyCode === 13) {
       setOrdersArr([
         {
@@ -41,7 +41,7 @@ const Row = ({
         ...ordersArr,
       ]);
     }
-  }
+  };
 
   return (
     <tr
@@ -167,16 +167,14 @@ const Row = ({
                 )}
               </div>
             );
-          } 
-          else if (rowDisabled) {
+          } else if (rowDisabled) {
             return (
               <div className="icon_name_wrap">
                 <img src={imgIcon} />
                 <p>{inputValue}</p>
               </div>
             );
-          } 
-          else if (isNameClicked&&!rowDisabled) {
+          } else if (isNameClicked && !rowDisabled) {
             return (
               <div className="icon_name_wrap">
                 <img src={imgIcon} />
@@ -205,7 +203,7 @@ const Row = ({
           }
         })()}
       </td>
-      {isHover&&!rowDisabled && (
+      {isHover && !rowDisabled && (
         <td
           className="delete"
           title="Удалить строку"
