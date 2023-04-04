@@ -229,4 +229,7 @@ padding-top: 80px;
 }
 :where(.css-dev-only-do-not-override-1vtf12y).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
   border-color: black;
+};
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select .ant-select-arrow{
+  inset-inline-end: 1px;
 }

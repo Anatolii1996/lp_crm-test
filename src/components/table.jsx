@@ -51,11 +51,9 @@ const Table = ({
             <td className="status">
               <p>Статус</p>{" "}
               {isHover ? (
-                <div className="select">
-                  <select>
-                    <option selected></option>
-                  </select>
-                </div>
+                <div className="select_antd">
+                <CustomSelect arrName={[]} />
+              </div>
               ) : (
                 <div className="space"></div>
               )}
@@ -63,11 +61,9 @@ const Table = ({
             <td className="product">
               <p>Товар</p>{" "}
               {isHover ? (
-                <div className="select">
-                  <select>
-                    <option selected></option>
-                  </select>
-                </div>
+                <div className="select_antd">
+                <CustomSelect arrName={[]} />
+              </div>
               ) : (
                 <div className="space"></div>
               )}
@@ -75,10 +71,8 @@ const Table = ({
             <td className="id_number">
               <p>ID</p>{" "}
               {isHover ? (
-                <div className="select">
-                  <select>
-                    <option selected></option>
-                  </select>
+                <div className="select_antd">
+                  <CustomSelect arrName={[]} />
                 </div>
               ) : (
                 <div className="space"></div>
@@ -88,8 +82,7 @@ const Table = ({
               <p>Название</p>
               {isHover ? (
                 <div className="select_antd">
-                  <CustomSelect arrName={arrName}/>
-        
+                  <CustomSelect arrName={arrName} />
                 </div>
               ) : (
                 <div className="space"></div>
