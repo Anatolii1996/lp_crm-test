@@ -15,7 +15,7 @@ const Images = ({ setImgIcon, imgIcon}) => {
     "./icons/Vector (3).png",
   ];
   return (
-    <div className="icons_menu">
+    <div className="icons_menu" onClick={(e)=>e.stopPropagation()}>
       {imageURL.map((el) => {
         return (
          <Icon key={el} el={el} imgIcon={imgIcon} setImgIcon={setImgIcon}/>
