@@ -23,7 +23,7 @@ const CustomSelect = ({ arrName  }) => {
         width: "100%",
         
       }}
-      suffixIcon={<CaretDownOutlined onClick={toggleOpen}/>}
+      suffixIcon={<CaretDownOutlined style={{ color: "black" }} onClick={toggleOpen}/>}
       open={open}
     >
       {arrName.map((name) => (
