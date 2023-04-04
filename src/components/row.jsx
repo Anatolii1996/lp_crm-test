@@ -77,7 +77,7 @@ const Row = ({
         ></div>
       </td>
       <td
-        className={`${
+        className={`img_wrap ${
           !isRowHower
             ? isRowSelect
               ? "row_select"
