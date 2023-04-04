@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Row from "./row";
-import Option from "./option";
+import CustomSelect from "./select";
 
 const Table = ({
   setAnySelectRow,
@@ -87,13 +87,15 @@ const Table = ({
             <td className="product_name">
               <p>Название</p>
               {isHover ? (
-                <div className="select">
-                  <select onChange={(e) => setOrdersArr(ordersArr.filter((order) => order.name === e.target.value))}>
+                <div className="select_antd">
+                  <CustomSelect/>
+
+                  {/* <select onChange={(e) => setOrdersArr(ordersArr.filter((order) => order.name === e.target.value))}>
                     <option></option>
                     {arrName.map((el) => {
                       return <Option key={el} el={el} />;
                     })}
-                  </select>
+                  </select> */}
                 </div>
               ) : (
                 <div className="space"></div>
