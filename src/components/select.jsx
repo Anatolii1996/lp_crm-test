@@ -19,6 +19,7 @@ const CustomSelect = ({ arrName  }) => {
       onChange={(newValue) => {
         setValue(newValue);
       }}
+      onClick={toggleOpen}
       style={{
         width: "100%",
         
