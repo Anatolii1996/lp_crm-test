@@ -178,7 +178,7 @@ const Row = ({
               </div>
             );
           } 
-          else if (isNameClicked) {
+          else if (isNameClicked&&!rowDisabled) {
             return (
               <div className="icon_name_wrap">
                 <img src={imgIcon} />
