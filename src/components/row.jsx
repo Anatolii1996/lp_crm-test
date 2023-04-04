@@ -27,10 +27,6 @@ const Row = ({
   const [imgIcon, setImgIcon] = useState(icon);
 
   useEffect(() => {
-    setImgMenuOpen(false);
-  }, [imgIcon]);
-
-  useEffect(() => {
     setIsNameClicked(false);
   }, [rowDisabled]);
 
@@ -189,6 +185,18 @@ const Row = ({
                   value={inputValue}
                   onChange={(e) => {
                     setInputValue(e.target.value);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13) {
+                      setOrdersArr([
+                        {
+                          id: idVal,
+                          icons: imgIcon,
+                          name: nameVal,
+                        },
+                        ...ordersArr,
+                      ]);
+                    }
                   }}
                 />
                 {imgMenuOpen && (
