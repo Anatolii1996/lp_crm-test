@@ -1,4 +1,6 @@
 import { Select } from 'antd';
+import { CaretDownFilled } from '@ant-design/icons';
+
 
 const onChange = (value) => {
   console.log(`selected ${value}`);
@@ -15,8 +17,7 @@ return(
     size='small'
     style={{
       width: 100,
-      height: 17,
-    //   lineHeight: 17
+      height: "auto",
     }}
     // placeholder="Select a person"
     optionFilterProp="children"
@@ -39,6 +40,7 @@ return(
         label: 'Tom',
       },
     ]}
+    suffixIcon={<CaretDownFilled />}
   />
 )
 };
