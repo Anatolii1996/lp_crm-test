@@ -69,6 +69,12 @@ td + td {
   .space {
     width: 105px;
   }
+  .select_antd {
+    height: 18px;
+    width: 105px;
+    overflow: hidden;
+    
+  }
 }
 
 .hover {
@@ -161,9 +167,6 @@ td + td {
   }
 }
 
-.select_antd {
-  height: 18px;
-}
 
 //меняет расзмер селекта
 :where(
@@ -189,4 +192,21 @@ td + td {
 //сдвигает положение стрелки вправо
 :where(.css-dev-only-do-not-override-1vtf12y).ant-select .ant-select-arrow {
   inset-inline-end: 1px;
+}
+//меняет местами option и знак
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select-dropdown .ant-select-item-option{
+  flex-direction: row-reverse;
+}
+//изменяет отступ внутри dropdown
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select-dropdown .ant-select-item{
+  padding: 5px 0;
+}
+//добавляет отступ между option и знаком
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select-dropdown .ant-select-item-option-content{
+  margin-left: 5px;
+}
+//запрещает перенос на новую строку выбранных option
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select-multiple.ant-select-sm .ant-select-selection-overflow{
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
