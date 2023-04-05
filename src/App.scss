@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- height: 100vh;
+  height: 100vh;
   .table_wrap {
     table {
       border-collapse: collapse;
@@ -20,7 +20,6 @@ body {
       thead {
         width: 100%;
         tr {
-         
           td {
             font-size: 14px;
             font-weight: 500;
@@ -34,6 +33,10 @@ body {
             font-size: 14px;
             font-weight: 300;
           }
+          .img_wrap {
+            font-size: 19px;
+          }
+                   
         }
       }
     }
@@ -41,7 +44,6 @@ body {
 }
 td + td {
   padding-left: 15px;
-  // border: 1px solid black;
 }
 .order_name {
   display: inline-block;
@@ -59,12 +61,12 @@ td + td {
 }
 
 .id_number {
-    .space {
+  .space {
     width: 34px;
   }
 }
 .product_name {
-    .space {
+  .space {
     width: 105px;
   }
 }
@@ -78,7 +80,7 @@ td + td {
 }
 
 .hover_border {
-  height: 19.5px;
+  height: 22.7px;
   width: 8px;
   background-color: #515151;
   border-top-left-radius: 3px;
@@ -90,8 +92,8 @@ td + td {
 .buttons_wrap {
   display: flex;
   flex-direction: column;
-height: 100%;
-padding-top: 80px;
+  height: 100%;
+  padding-top: 80px;
   span {
     padding: 2px;
     font-size: 6px;
@@ -117,7 +119,6 @@ padding-top: 80px;
   text-overflow: ellipsis;
   height: 19.5px;
   background-color: transparent;
- 
 }
 .input_id {
   border: 0;
@@ -144,7 +145,6 @@ padding-top: 80px;
   background-color: #ffff;
   padding: 5px;
   width: 105px;
-  // height: 105px;
   display: flex;
   flex-wrap: wrap;
   row-gap: 5px;
@@ -156,36 +156,37 @@ padding-top: 80px;
     height: 12px;
     cursor: pointer;
   }
-  .no_select{
-    cursor: not-allowed;;
+  .no_select {
+    cursor: not-allowed;
   }
 }
 
-.select_antd{
+.select_antd {
   height: 18px;
 }
 
 //меняет расзмер селекта
-:where(.css-dev-only-do-not-override-1vtf12y).ant-select-multiple.ant-select-sm.ant-select-show-arrow .ant-select-selector {
+:where(
+    .css-dev-only-do-not-override-1vtf12y
+  ).ant-select-multiple.ant-select-sm.ant-select-show-arrow
+  .ant-select-selector {
   height: 18px;
   line-height: 18px;
   border: 0;
   background-color: transparent;
   border-bottom: 1px solid black;
   border-radius: 0;
- 
 }
 
 //меняет цвет границы при hover
-:where(.css-dev-only-do-not-override-1vtf12y).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select:not(
+    .ant-select-disabled
+  ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
+  .ant-select-selector {
   border-color: black;
-};
-
-//сдвигает положение стрелки вправо
-:where(.css-dev-only-do-not-override-1vtf12y).ant-select .ant-select-arrow{
-  inset-inline-end: 1px;
 }
 
-.img_wrap{
-  padding-top: 4px;
+//сдвигает положение стрелки вправо
+:where(.css-dev-only-do-not-override-1vtf12y).ant-select .ant-select-arrow {
+  inset-inline-end: 1px;
 }

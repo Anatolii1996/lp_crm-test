@@ -72,7 +72,7 @@ const Row = ({
       <td>
         <div
           className={`${
-            isRowHower ? "hover_border" : isRowSelect ? "hover_border" : ""
+            isRowHower||isRowSelect ? "hover_border" :  ""
           } `}
         ></div>
       </td>
