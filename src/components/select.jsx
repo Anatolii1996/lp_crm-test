@@ -1,6 +1,8 @@
 import { Select } from "antd";
 import { useState } from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
+import { BsFillCircleFill } from "react-icons/bs";
+
 
 const { Option } = Select;
 
@@ -10,25 +12,39 @@ const CustomSelect = ({ arrName  }) => {
   
   const toggleOpen = () => {
     setOpen(!open);
-  }
+  };
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+    setOpen(true);
+  };
+
+  
+
   return (
     <Select
       size="small"
       mode="multiple"
       value={value}
-      onChange={(newValue) => {
-        setValue(newValue);
-      }}
-      onClick={toggleOpen}
+      
+      onClick={()=>{
+        
+        if(!open){
+          setOpen(true)
+        }
+        }}
+      onChange={handleChange}
       style={{
         width: "100%",
         
       }}
       suffixIcon={<CaretDownOutlined style={{ color: "black"}} onClick={toggleOpen}/>}
       open={open}
+      dropdownStyle={{ borderRadius: 0 }}
+      menuItemSelectedIcon={<BsFillCircleFill style={{ color: "black", fontSize: "10px"}}/>}
     >
       {arrName.map((name) => (
-        <Option key={name} value={name}>
+        <Option key={name} value={name} >
           {name}
         </Option>
       ))}
