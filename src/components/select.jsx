@@ -23,9 +23,7 @@ const CustomSelect = ({ arrName }) => {
       size="small"
       mode="multiple"
       value={value}
-      // onClick={() => {
-      //   setOpen(true);
-      // }}
+      onClick={toggleOpen}
       onChange={handleChange}
       style={{
         width: "100%",
@@ -36,14 +34,17 @@ const CustomSelect = ({ arrName }) => {
       open={open}
       dropdownStyle={{ borderRadius: 0 }}
       menuItemSelectedIcon={
-        <BsFillCircleFill style={{ color: "black", fontSize: "10px", verticalAlign: "middle" }} />
+        <BsFillCircleFill
+          style={{ color: "black", fontSize: "10px", verticalAlign: "middle" }}
+        />
       }
     >
       {arrName.map((name) => (
-        <Option
-          key={name}
-          value={name}
-         
+        <Option key={name} value={name}
+        onClick={(e) => {
+          e.stopPropagation();
+          
+        }}
         >
           {name}
         </Option>
