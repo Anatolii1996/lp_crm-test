@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Images from "./images";
+import { BsTruck } from "react-icons/bs";
 
 const Row = ({
   id,
@@ -12,6 +13,8 @@ const Row = ({
   icon,
   imgMenuOpen,
   setImgMenuOpen,
+  setClickedName,
+  clickedName,
 }) => {
   const [elId] = useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
@@ -27,14 +30,17 @@ const Row = ({
   const [imgIcon, setImgIcon] = useState(icon);
 
   useEffect(() => {
-    setIsNameClicked(false);
-  }, [rowDisabled]);
-
-  useEffect(() => {
-    if (!isRowHower) {
+    if (clickedName == id) {
+      setIsNameClicked(true);
+      setImgMenuOpen(true);
+    } else {
       setIsNameClicked(false);
     }
-  }, [isRowHower]);
+  }, [clickedName]);
+
+  useEffect(() => {
+    setIsNameClicked(false);
+  }, [rowDisabled]);
 
   const changeName = (e) => {
     if (e.keyCode === 13) {
@@ -71,9 +77,7 @@ const Row = ({
     >
       <td>
         <div
-          className={`${
-            isRowHower||isRowSelect ? "hover_border" :  ""
-          } `}
+          className={`${isRowHower || isRowSelect ? "hover_border" : ""} `}
         ></div>
       </td>
       <td
@@ -149,8 +153,8 @@ const Row = ({
             : "hover"
         }`}
         onClick={() => {
-          setIsNameClicked(true);
-          setImgMenuOpen(true);
+          setClickedName(id);
+          // setImgMenuOpen(true);
         }}
       >
         {(() => {

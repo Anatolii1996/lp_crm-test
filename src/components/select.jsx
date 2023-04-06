@@ -40,11 +40,12 @@ const CustomSelect = ({ arrName }) => {
       }
     >
       {arrName.map((name) => (
-        <Option key={name} value={name}
-        onClick={(e) => {
-          e.stopPropagation();
-          
-        }}
+        <Option
+          key={name}
+          value={name}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
         >
           {name}
         </Option>

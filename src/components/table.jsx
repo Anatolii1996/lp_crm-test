@@ -11,6 +11,7 @@ const Table = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
+  const[clickedName, setClickedName]=useState(null);
 
   const arrName = [];
   ordersArr.forEach((el) => {
@@ -107,6 +108,8 @@ const Table = ({
                   setImgMenuOpen={setImgMenuOpen}
                   incrementRow={incrementRow}
                   decrementRow={decrementRow}
+                  setClickedName={setClickedName}
+                  clickedName={clickedName}
                 />
               );
             })}
