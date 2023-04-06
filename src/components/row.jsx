@@ -30,6 +30,12 @@ const Row = ({
   const [imgIcon, setImgIcon] = useState(icon);
 
   useEffect(() => {
+    if (!isRowSelect && !isRowHower) {
+      setIsNameClicked(false);
+    }
+  }, [isRowHower, isRowSelect]);
+
+  useEffect(() => {
     if (clickedName == id) {
       setIsNameClicked(true);
       setImgMenuOpen(true);
@@ -154,7 +160,6 @@ const Row = ({
         }`}
         onClick={() => {
           setClickedName(id);
-          // setImgMenuOpen(true);
         }}
       >
         {(() => {
