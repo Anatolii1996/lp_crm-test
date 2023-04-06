@@ -23,13 +23,15 @@ const CustomSelect = ({ arrName }) => {
       size="small"
       mode="multiple"
       value={value}
-      onClick={toggleOpen}
+      onFocus={toggleOpen}
       onChange={handleChange}
       style={{
         width: "100%",
       }}
       suffixIcon={
-        <CaretDownOutlined style={{ color: "black" }} onClick={toggleOpen} />
+        <CaretDownOutlined style={{ color: "black" }}
+         onClick={toggleOpen}
+          />
       }
       open={open}
       dropdownStyle={{ borderRadius: 0 }}
