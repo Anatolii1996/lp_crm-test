@@ -83,7 +83,7 @@ const Table = ({
               <p>Название</p>
               {isHover ? (
                 <div className="select_antd">
-                  <CustomSelect arrName={arrName} />
+                  <CustomSelect arrName={arrName} setOrdersArr={setOrdersArr} ordersArr={ordersArr}/>
                 </div>
               ) : (
                 <div className="space"></div>

@@ -1,11 +1,11 @@
 import { Select } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
 import { BsFillCircleFill } from "react-icons/bs";
 
 const { Option } = Select;
 
-const CustomSelect = ({ arrName }) => {
+const CustomSelect = ({ arrName, setOrdersArr, ordersArr }) => {
   const [value, setValue] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -18,20 +18,24 @@ const CustomSelect = ({ arrName }) => {
     setOpen(true);
   };
 
+  useEffect(() => {
+    if (value.length) {
+      setOrdersArr(ordersArr.filter((el) => el.name == value));
+    }
+  }, [value]);
+
   return (
     <Select
       size="small"
       mode="multiple"
       value={value}
-      onFocus={()=>setOpen(true)}
+      onFocus={() => setOpen(true)}
       onChange={handleChange}
       style={{
         width: "100%",
       }}
       suffixIcon={
-        <CaretDownOutlined style={{ color: "black" }}
-         onClick={toggleOpen}
-          />
+        <CaretDownOutlined style={{ color: "black" }} onClick={toggleOpen} />
       }
       open={open}
       dropdownStyle={{ borderRadius: 0 }}
