@@ -23,7 +23,7 @@ const CustomSelect = ({ arrName }) => {
       size="small"
       mode="multiple"
       value={value}
-      onFocus={toggleOpen}
+      onFocus={()=>setOpen(true)}
       onChange={handleChange}
       style={{
         width: "100%",
