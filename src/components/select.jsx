@@ -5,7 +5,7 @@ import { BsFillCircleFill } from "react-icons/bs";
 
 const { Option } = Select;
 
-const CustomSelect = ({ arrName, setOrdersArr, ordersArr }) => {
+const CustomSelect = ({ arrName, setSelectOption }) => {
   const [value, setValue] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -20,7 +20,7 @@ const CustomSelect = ({ arrName, setOrdersArr, ordersArr }) => {
 
   useEffect(() => {
     if (value.length) {
-      setOrdersArr(ordersArr.filter((el) => el.name == value));
+      setSelectOption(value);
     }
   }, [value]);
 

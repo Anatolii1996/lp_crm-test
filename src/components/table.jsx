@@ -11,7 +11,8 @@ const Table = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
-  const[clickedName, setClickedName]=useState(null);
+  const [clickedName, setClickedName] = useState(null);
+  const [selectOption, setSelectOption] = useState([]);
 
   const arrName = [];
   ordersArr.forEach((el) => {
@@ -53,8 +54,8 @@ const Table = ({
               <p>Статус</p>{" "}
               {isHover ? (
                 <div className="select_antd">
-                <CustomSelect arrName={[]} />
-              </div>
+                  <CustomSelect arrName={[]} />
+                </div>
               ) : (
                 <div className="space"></div>
               )}
@@ -63,8 +64,8 @@ const Table = ({
               <p>Товар</p>{" "}
               {isHover ? (
                 <div className="select_antd">
-                <CustomSelect arrName={[]} />
-              </div>
+                  <CustomSelect arrName={[]} />
+                </div>
               ) : (
                 <div className="space"></div>
               )}
@@ -83,7 +84,10 @@ const Table = ({
               <p>Название</p>
               {isHover ? (
                 <div className="select_antd">
-                  <CustomSelect arrName={arrName} setOrdersArr={setOrdersArr} ordersArr={ordersArr}/>
+                  <CustomSelect
+                    arrName={arrName}
+                    setSelectOption={setSelectOption}
+                  />
                 </div>
               ) : (
                 <div className="space"></div>
@@ -93,26 +97,51 @@ const Table = ({
           </tr>
         </thead>
         <tbody>
-          {ordersArr &&
-            ordersArr.map((el) => {
-              return (
-                <Row
-                  key={el.id}
-                  id={el.id}
-                  name={el.name}
-                  icon={el.icons}
-                  isHover={isHover}
-                  setOrdersArr={setOrdersArr}
-                  ordersArr={ordersArr}
-                  imgMenuOpen={imgMenuOpen}
-                  setImgMenuOpen={setImgMenuOpen}
-                  incrementRow={incrementRow}
-                  decrementRow={decrementRow}
-                  setClickedName={setClickedName}
-                  clickedName={clickedName}
-                />
-              );
-            })}
+          {(() => {
+            if (ordersArr && !selectOption.length) {
+              return ordersArr.map((el) => {
+                return (
+                  <Row
+                    key={el.id}
+                    id={el.id}
+                    name={el.name}
+                    icon={el.icons}
+                    isHover={isHover}
+                    setOrdersArr={setOrdersArr}
+                    ordersArr={ordersArr}
+                    imgMenuOpen={imgMenuOpen}
+                    setImgMenuOpen={setImgMenuOpen}
+                    incrementRow={incrementRow}
+                    decrementRow={decrementRow}
+                    setClickedName={setClickedName}
+                    clickedName={clickedName}
+                  />
+                );
+              });
+            } else if (ordersArr && selectOption.length) {
+              return ordersArr
+                .filter((el) => selectOption.includes(el.name))
+                .map((el) => {
+                  return (
+                    <Row
+                      key={el.id}
+                      id={el.id}
+                      name={el.name}
+                      icon={el.icons}
+                      isHover={isHover}
+                      setOrdersArr={setOrdersArr}
+                      ordersArr={ordersArr}
+                      imgMenuOpen={imgMenuOpen}
+                      setImgMenuOpen={setImgMenuOpen}
+                      incrementRow={incrementRow}
+                      decrementRow={decrementRow}
+                      setClickedName={setClickedName}
+                      clickedName={clickedName}
+                    />
+                  );
+                });
+            }
+          })()}
         </tbody>
       </table>
     </div>
