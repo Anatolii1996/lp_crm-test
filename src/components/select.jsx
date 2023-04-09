@@ -14,8 +14,13 @@ const CustomSelect = ({ arrName, setSelectOption }) => {
   };
 
   const handleChange = (newValue) => {
-    setValue(newValue);
-    setOpen(true);
+    if (!newValue.length) {
+      setValue([]);
+      setSelectOption([]);
+    } else {
+      setValue(newValue);
+      setOpen(true);
+    }
   };
 
   useEffect(() => {
