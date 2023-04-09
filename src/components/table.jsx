@@ -9,7 +9,6 @@ const Table = ({
   imgMenuOpen,
   setImgMenuOpen,
   setIdSelectedRow,
-  idSelectedRow
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
@@ -103,6 +102,7 @@ const Table = ({
         <tbody>
           {(() => {
             if (ordersArr && !selectOption.length) {
+              
               return ordersArr.map((el) => {
                 return (
                   <Row
@@ -120,7 +120,6 @@ const Table = ({
                     setClickedName={setClickedName}
                     clickedName={clickedName}
                     setIdSelectedRow={setIdSelectedRow}
-                    idSelectedRow={idSelectedRow}
                   />
                 );
               });

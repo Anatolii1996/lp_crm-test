@@ -16,7 +16,6 @@ const Row = ({
   setClickedName,
   clickedName,
   setIdSelectedRow,
-  idSelectedRow
 }) => {
   const [elId] = useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
