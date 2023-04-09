@@ -1,8 +1,12 @@
-const Buttons = ({ anySelectRow, addNewOrder, setOrdersArr, ordersArr }) => {
+const Buttons = ({ anySelectRow, addNewOrder, setOrdersArr, ordersArr, idSelectedRow }) => {
   return (
     <div className="buttons_wrap">
       <span onClick={()=>{addNewOrder()}}>➕</span>
-      {anySelectRow && <span>✖️</span>}
+      {anySelectRow && <span onClick={()=>{
+        if(idSelectedRow.length){
+          setOrdersArr(ordersArr.filter((el)=>!idSelectedRow.includes(el.id)))
+        }
+      }}>✖️</span>}
     </div>
   );
 };
