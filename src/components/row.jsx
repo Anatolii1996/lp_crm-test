@@ -16,6 +16,7 @@ const Row = ({
   setClickedName,
   clickedName,
   setIdSelectedRow,
+  idSelectedRow,
 }) => {
   const [elId] = useState(id);
   const [isRowHower, setIsRowHower] = useState(false);
@@ -30,14 +31,15 @@ const Row = ({
 
   const [imgIcon, setImgIcon] = useState(icon);
 
-  useEffect(()=>{
-    if(isRowSelect){
-      setIdSelectedRow((prev)=>[...prev, id])
-    }else{
-      setIdSelectedRow(prev => prev.filter(el => el !== id));
+  useEffect(() => {
+    if (idSelectedRow) {
+      if (isRowSelect) {
+        setIdSelectedRow((prev) => [...prev, id]);
+      } else {
+        setIdSelectedRow((prev) => prev.filter((el) => el !== id));
+      }
     }
-
-  }, [isRowSelect])
+  }, [isRowSelect]);
 
   useEffect(() => {
     if (!isRowSelect && !isRowHower) {

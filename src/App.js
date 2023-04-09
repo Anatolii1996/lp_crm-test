@@ -82,7 +82,7 @@ function App() {
    }
     }}>
       <Table setAnySelectRow={setAnySelectRow} ordersArr={ordersArr} setOrdersArr={setOrdersArr} imgMenuOpen={imgMenuOpen}
-        setImgMenuOpen={setImgMenuOpen} setIdSelectedRow={setIdSelectedRow} />
+        setImgMenuOpen={setImgMenuOpen} setIdSelectedRow={setIdSelectedRow} idSelectedRow={idSelectedRow}/>
       <Buttons anySelectRow={anySelectRow} addNewOrder={addNewOrder} setOrdersArr={setOrdersArr} ordersArr={ordersArr} idSelectedRow={idSelectedRow}/>
     </div>
   );
