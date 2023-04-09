@@ -43,7 +43,9 @@ const Table = ({
         setIsHover(true);
       }}
       onMouseOut={() => {
-        setIsHover(false);
+        if (!selectOption.length) {
+          setIsHover(false);
+        }
       }}
     >
       <table>

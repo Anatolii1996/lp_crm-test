@@ -49,9 +49,7 @@ const CustomSelect = ({ arrName, setSelectOption }) => {
         <Option
           key={name}
           value={name}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
+         
         >
           {name}
         </Option>

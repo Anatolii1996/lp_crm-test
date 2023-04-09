@@ -11,7 +11,7 @@ body {
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 50px;
   height: 100vh;
   .table_wrap {
     table {
@@ -99,7 +99,7 @@ td + td {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-top: 80px;
+  // padding-top: 80px;
   span {
     padding: 2px;
     font-size: 6px;
