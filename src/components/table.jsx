@@ -8,6 +8,8 @@ const Table = ({
   setOrdersArr,
   imgMenuOpen,
   setImgMenuOpen,
+  setIdSelectedRow,
+  idSelectedRow
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [countSelectRow, setCountSelectRow] = useState(0);
@@ -117,6 +119,8 @@ const Table = ({
                     decrementRow={decrementRow}
                     setClickedName={setClickedName}
                     clickedName={clickedName}
+                    setIdSelectedRow={setIdSelectedRow}
+                    idSelectedRow={idSelectedRow}
                   />
                 );
               });

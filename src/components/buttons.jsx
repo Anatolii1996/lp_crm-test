@@ -1,4 +1,4 @@
-const Buttons = ({ anySelectRow, addNewOrder }) => {
+const Buttons = ({ anySelectRow, addNewOrder, setOrdersArr, ordersArr }) => {
   return (
     <div className="buttons_wrap">
       <span onClick={()=>{addNewOrder()}}>➕</span>

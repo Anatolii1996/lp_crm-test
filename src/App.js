@@ -68,7 +68,8 @@ function App() {
       name: "Silver",
     },
   ];
-  const [ordersArr, setOrdersArr] = useState(orders)
+  const [ordersArr, setOrdersArr] = useState(orders);
+  const [idSelectedRow, setIdSelectedRow]=useState([]);
 
   const addNewOrder = () => {
     setOrdersArr([{ id: "", icons: "./icons/Group.png", name: "" }, ...ordersArr])
@@ -81,8 +82,8 @@ function App() {
    }
     }}>
       <Table setAnySelectRow={setAnySelectRow} ordersArr={ordersArr} setOrdersArr={setOrdersArr} imgMenuOpen={imgMenuOpen}
-        setImgMenuOpen={setImgMenuOpen} />
-      <Buttons anySelectRow={anySelectRow} addNewOrder={addNewOrder} />
+        setImgMenuOpen={setImgMenuOpen} setIdSelectedRow={setIdSelectedRow} idSelectedRow={idSelectedRow}/>
+      <Buttons anySelectRow={anySelectRow} addNewOrder={addNewOrder} setOrdersArr={setOrdersArr} ordersArr={ordersArr}/>
     </div>
   );
 }
