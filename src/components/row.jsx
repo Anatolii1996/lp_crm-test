@@ -62,15 +62,17 @@ const Row = ({
 
   const changeName = (e) => {
     if (e.keyCode === 13) {
-      setOrdersArr([
+      setOrdersArr(ordersArr.filter((el)=>el.id!=""));
+      setOrdersArr(prev=>[
         {
           id: idVal,
-          icons: imgIcon,
+          icons:imgIcon,
           name: nameVal,
         },
-        ...ordersArr,
+        ...prev,
       ]);
     }
+   
   };
 
   return (
