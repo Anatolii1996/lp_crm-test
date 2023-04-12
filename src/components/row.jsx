@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Images from "./images";
-import { BsTruck } from "react-icons/bs";
 
 const Row = ({
   id,
@@ -30,6 +29,8 @@ const Row = ({
   const [nameVal, setNameVal] = useState("");
 
   const [imgIcon, setImgIcon] = useState(icon);
+
+  
 
   useEffect(() => {
     if (idSelectedRow) {

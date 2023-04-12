@@ -4,6 +4,7 @@ return(
     onClick={() => {
        if(el!=imgIcon){
          setImgIcon(el);
+         document.querySelector("#input_name").focus();
        }
      
       
