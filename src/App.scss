@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Raleway", sans-serif;
+  font-size: 18px;
 }
 .App {
   display: flex;
@@ -16,12 +17,12 @@ body {
   .table_wrap {
     table {
       border-collapse: collapse;
-      width: 40%;
+      // width: 40%;
       thead {
         width: 100%;
         tr {
           td {
-            font-size: 14px;
+            // font-size: 14px;
             font-weight: 500;
           }
         }
@@ -30,7 +31,7 @@ body {
         tr {
           height: 19px;
           td {
-            font-size: 14px;
+            // font-size: 14px;
             font-weight: 300;
           }
           .img_wrap {
@@ -137,7 +138,7 @@ td + td {
 .icon_name_wrap {
   display: flex;
   align-items: center;
-  width: 105px;
+  // width: 105px;
   text-overflow: ellipsis;
   flex-wrap: wrap;
   position: relative;
@@ -173,7 +174,7 @@ td + td {
     .css-dev-only-do-not-override-1vtf12y
   ).ant-select-multiple.ant-select-sm.ant-select-show-arrow
   .ant-select-selector {
-  height: 18px;
+  // height: 18px;
   line-height: 18px;
   border: 0;
   background-color: transparent;
