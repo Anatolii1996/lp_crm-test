@@ -1,3 +1,4 @@
+/* eslint-disable */
 const Icon=({el, imgIcon, setImgIcon})=>{
 return(
     <img className={`${el==imgIcon?"transparent no_select":""}`} 

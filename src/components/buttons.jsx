@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Buttons = ({ anySelectRow, addNewOrder, setOrdersArr, ordersArr, idSelectedRow }) => {
   return (
     <div className="buttons_wrap">

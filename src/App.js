@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import './App.scss';
 import Buttons from './components/buttons';

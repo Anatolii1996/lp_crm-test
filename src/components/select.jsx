@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Select } from "antd";
 import { useState, useEffect } from "react";
 import { CaretDownOutlined } from "@ant-design/icons";

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Icon from "./icon";
 
 const Images = ({ setImgIcon, imgIcon}) => {

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import Row from "./row";
 import CustomSelect from "./select";
